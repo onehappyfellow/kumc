@@ -7,13 +7,14 @@
 
 	<!-- Primary Nav -->
 	<ul class="flex b grey-3">
-		<li><a href="/products" class="pa3 no-underline db">Products</a></li>
 
-		<li><a href="/values" class="pa3 no-underline db">Values</a></li>
+		{{ $currentPage := . }}
+		{{ range .Site.Menus.main }}
 
-		<li><a href="/post" class="pa3 no-underline db">Blog</a></li>
+		<li><a href="{{ .URL }}" class="pa3 no-underline db{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}">{{ .Name }}</a></li>
 
-		<li><a href="/contact" class="pa3 no-underline db">Contact</a></li>
+		{{ end }}
+
 	</ul>
 
 </nav>
