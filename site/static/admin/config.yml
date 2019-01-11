@@ -4,36 +4,36 @@ backend:
 media_folder: "site/static/img" # Folder where user uploaded files should go
 public_folder: "img"
 
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 
 collections: # A list of collections the CMS should be able to edit
-  - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "Post" # Used in the UI, ie.: "New Post"
-    folder: "site/content/post" # The path to the folder where the documents are stored
+  - label: "Posts (en)"
+    name: "english_posts"
+    folder: "_posts"
+    filter: {field: "language", value: "en"}
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields each document in this collection have
+    fields:
       - {label: "Language", name: "language", widget: "select", options: [{label: "English", value: "en"},{label: "Korean", value: "ko"}]}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Intro Blurb", name: "description", widget: "text"}
       - {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
-  - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "Korean Post" # Used in the UI, ie.: "New Post"
-    folder: "site/content/post" # The path to the folder where the documents are stored
+  - label: "Posts (ko)"
+    name: "korean_posts"
+    folder: "site/content/post"
+    filter: {field: "language", value: "ko"}
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields each document in this collection have
+    fields:
       - {label: "Language", name: "language", widget: "select", options: [{label: "English", value: "en"},{label: "Korean", value: "ko"}]}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Intro Blurb", name: "description", widget: "text"}
       - {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
-    filter:
-      field: language
-      value: ko
+
   - name: "event"
     label: "Event"
     folder: "site/content/events"
@@ -43,6 +43,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Start time", name: "start", widget: "datetime", default: "", format: "LLLL"}
       - {label: "Description", name: "description", widget: "text"}
+      
   - name: "pages"
     label: "Pages"
     files:
