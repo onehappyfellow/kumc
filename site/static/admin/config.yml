@@ -19,7 +19,6 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Intro Blurb", name: "description", widget: "text"}
       - {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Language", name: "language"}
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Korean Post" # Used in the UI, ie.: "New Post"
     folder: "site/content/post" # The path to the folder where the documents are stored
@@ -32,7 +31,6 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Intro Blurb", name: "description", widget: "text"}
       - {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Language", name: "language"}
     filter:
       field: language
       value: ko
