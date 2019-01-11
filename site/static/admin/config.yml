@@ -27,7 +27,9 @@ collections: # A list of collections the CMS should be able to edit
     folder: "site/content/events"
     create: true
     fields:
-      - {label: "Language", name: "language"}
+      - {label: "Language", name: "language", widget: "select", options: [
+        - {label: "English", value: "en"}
+        - {label: "Korean", value: "ko"}]}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Start time", name: "start", widget: "datetime", default: "", format: "LLLL"}
       - {label: "Description", name: "description", widget: "text"}
