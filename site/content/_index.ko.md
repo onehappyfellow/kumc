@@ -1,20 +1,25 @@
 ---
-title: "Kreat coffee with a conscience"
-subtitle: Support multicultural farming while enjoying a cup
-image: /img/home-jumbotron.jpg
+title: "알버커키연합감리교회"
+banner:
+  heading: 변화
+  heading_span: 되자
+  subheading: 2019 알버커키연합감리교회 표어
+  text: "너희는 이 세대를 본받지 말고 오직 마음을 새롭게 함으로 변화를 받아 하나님의 선하시고 기뻐하시고 온전하신 뜻이 무엇인지 분별하도록 하라 (롬 12:2)"
 blurb:
-    heading: Why Kaldi?
-    text: "Kaldi is the coffee store for everyone who believes that great coffee shouldn't just taste good, it should do good too. We source all of our beans directly from small scale sustainable farmers and make sure part of the profits are reinvested in their communities."
-intro:
-    heading: "What we offer"
-    text: "Kaldi is the ultimate spot for coffee lovers who want to learn about their java’s origin and support the farmers that grew it. We take coffee production, roasting and brewing seriously and we’re glad to pass that knowledge to anyone."
-products:
-    - image: img/illustrations-coffee.svg
-      text: "We sell green and roasted coffee beans that are sourced directly from independent farmers and farm cooperatives. We’re proud to offer a variety of coffee beans grown with great care for the environment and local communities. Check our post or contact us directly for current availability."
-    - image: /img/illustrations-coffee-gear.svg
-      text: "We offer a small, but carefully curated selection of brewing gear and tools for every taste and experience level. No matter if you roast your own beans or just bought your first french press, you’ll find a gadget to fall in love with in our shop."
-values:
-    heading: Our values
-    text: Coffee is an amazing part of human culture but it has a dark side too – one of colonialism and mindless abuse of natural resources and human lives. We want to turn this around and return the coffee trade to the drink’s exhilarating, empowering and unifying nature.
+  heading: 우리 교회
+  text: "알버커키 연합감리교회홈페이지에 오신 것을 환영합니다. 우리 교회는 성경에 기록된 교회처럼 열정적인 영성으로 예배를 드리는 교회, 헌신적인 사랑으로 서로 돌아보는 교회, 지역 사회에 선한 영향을 주는 교회가 되기를 추구합니다."
+schedule:
+  heading: 예배시간
+  items:
+    - {service: "주일예배", time: "11:00 am"}
+    - {service: "영어예배", time: "9:45 am", indent: true}
+    - {service: "수요예배", time: "7:00 pm"}
+    - {service: "새벽기도회 (화 ~ 금)", time: "5:40 am"}
+    - {service: "새벽기도회 (토)", time: "6:00 am", indent: true}
+    - {service: "월요성경공부", time: "10:30 am"}
+contact:
+  heading: 오시는길
+  phone: "연락처: [505-341-0205] (tel:+1-505-341-0205)"
+  ride: "차량이용문의: 이명길 목사 [505-730-3614] (tel:1-505-730-3614)"
 ---
 

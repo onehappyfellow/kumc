@@ -1,13 +1,15 @@
 {{ define "main" }}
 
-{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
+{{ partial "banner" .Params.banner }}
 
-{{ partial "short-text" .Params.blurb}}
+<div class="content">
+  {{ partial "short-text" .Params.blurb}}
+</div>
 
-{{ partial "2-up" .Params }}
-
-{{ partial "text-and-image" (dict "heading" .Params.values.heading "text" .Params.values.text "buttonText" "Read more" "buttonLink" "/values") }}
-
-{{ partial "blog" . }}
+<div class="widget__wrapper">
+  {{ partial "widget-service-times" .Params.schedule }}
+  {{ partial "widget-upcoming-events" . }}
+  {{ partial "widget-map" .Params.contact }}
+</div>
 
 {{ end }}

@@ -1,13 +1,24 @@
 <head>
 
-	<title>{{ .Title }} | Kaldi</title>
-	<link rel="stylesheet" href="/css/main.css" />
+	<title>{{ .Title }}{{ if not .IsHome }} | KUMC{{ end }}</title>
+	<!--<link rel="stylesheet" href="/css/main.css" />-->
+
+	{{ $options := (dict "targetPath" "style.css" "outputStyle" "compressed" "enableSourceMap" true) }}
+	{{ $styles := resources.Get "scss/main.scss" | toCSS $options }}
+	<!-- | minify | fingerprint -->
+
+	<link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen" />
+	<!-- integrity="{{ $styles.Data.Integrity }}" -->
 
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700" rel="stylesheet">
+	<!-- TODO change fonts -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script|Nanum+Gothic:400,700|Nanum+Myeongjo:700&amp;subset=korean" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Charm:700|Courgette|Kaushan+Script|Tangerine:700" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
@@ -22,6 +33,13 @@
 	<meta property="og:title" content="Kaldi | Great coffee with a conscience">
 	<meta property="og:url" content="/">
 	<meta property="og:image" content="/img/og-image.jpg">
+
+	<!-- Language Translations -->
+	{{ if .IsTranslated }}
+    {{ range .AllTranslations }}
+    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
+    {{ end }}
+	{{ end }}
 
 	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>

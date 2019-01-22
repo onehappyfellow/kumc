@@ -1,7 +1,7 @@
 ---
 language: en
-title: First Event
-start: 'Sunday, January 20, 2019 3:30 PM'
+title: First Event with a Really long title
+type: event
+start: '2019-01-19'
 description: 'This will be a real event, really!'
 ---
-

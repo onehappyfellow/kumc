@@ -1,24 +1,26 @@
 {{ define "main" }}
 
-<div class="ph3 bg-off-white">
-	<div class="center mw6 pv3">
+<div class="contact">
+	
+	{{ partial "contact-form" . }}
 
-		<img src="{{ .Params.logo }}" alt="" class="db w4 center pv4">
-
-		{{ .Content }}
-
-		<div class="flex-ns mb3">
-	        	{{ range .Params.contact_entries }}
-				<div>
-					<h4 class="f4 b lh-title mb2 primary">{{ .heading }}</h4>
-					<p>{{ .text }}</p>
-				</div>
-			{{ end }}
+	<div>
+		<div class="contact__phone">
+			<h2>{{ i18n "phone" }} <i class="fas fa-phone"></i></h2>
+			<a href="+tel:1-505-341-0205">505-341-0205</a>
 		</div>
-
-		{{ partial "contact-form" . }}
-
+		
+		<div class="contact__address">
+			<h2>{{ i18n "address" }} <i class="fas fa-map-marker-alt"></i></h2>
+			<address>
+				Korean United Methodist Church<br>
+				601 Tyler Rd NE<br>
+				Albuquerque, NM 87113
+			</address>
+		</div>
 	</div>
+
 </div>
+
 
 {{ end }}

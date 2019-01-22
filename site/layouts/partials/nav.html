@@ -1,18 +1,41 @@
-<nav class="overflow-x-scroll overflow-x-visible-ns flex justify-between items-center center bg-white divider-grey relative">
+<nav class="navbar" role="navigation">
 
-	<!-- Logo -->
-	<a href="/" class="pa3 db mr4 h-100 w3 flex-none">
-		<img src="/img/logo.svg" alt="Kaldi logo" class="br0 db mb0 w-100"/>
-	</a>
+	<input type="checkbox" id="toggle-checkbox">
+	
+	<div class="nav__header">
+		<!-- Logo -->
+		<a href="/{{ .Lang }}">
+			<div class="logo">
+				{{ partial "cross-and-flame" }}
+				알버커키연합감리교회<span>Korean United Methodist Church in Albuquerque</span>
+			</div>
+		</a>
+	
+		<!-- Toggle Control-->
+		<label for="toggle-checkbox" id="toggle-icon" tabindex="0"><span></span></label>
+	
+	</div>
 
 	<!-- Primary Nav -->
-	<ul class="flex b grey-3">
+	<ul class="nav__list nav__list-main">
 
 		{{ $currentPage := . }}
 		{{ range .Site.Menus.main }}
+			<!-- TODO menu doesn't yet support nested dropdown lists -->
+			<li><a href="{{ .URL | relLangURL }}" class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}active{{end}}">{{ .Pre }}{{ .Name }}</a></li>
+		{{ end }}
 
-		<li><a href="{{ .URL }}" class="pa3 no-underline db{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}">{{ .Name }}</a></li>
-
+		<!-- Language Switcher links to same page (if translated) or home in alternate language -->
+		{{ if .IsTranslated }}
+			{{ range .Translations }}
+				<li><a rel="alternate" href="{{ .RelPermalink }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">{{ .Site.Language.Params.LanguageName }}</a></li>
+			{{ end }}
+		{{ else }}
+			{{ range .Site.Languages }}
+				{{ if ne $.Site.Language.Lang .Lang }}
+					<li><a rel="alternate" href="/{{ .Lang }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">{{ .Params.LanguageName }}</a></li>
+				{{ end }}
+			{{ end }}
 		{{ end }}
 
 	</ul>
