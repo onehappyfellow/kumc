@@ -3,7 +3,9 @@
   {{ partial "head" . }}
   <body class="sans-serif language-{{ .Site.Language.Lang }}">
     {{ partial "nav" . }}
-    {{ block "main" . }}{{ end }} 
+    <div class="main-block">
+      {{ block "main" . }}{{ end }} 
+    </div>
     {{ partial "footer" . }} 
   </body>
 </html>

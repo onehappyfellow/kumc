@@ -2,11 +2,16 @@
 ---------------------------------------------*/
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-size: 16px;
   background: #fff;
   color: $grey-8;
 }
-
+.main-block {
+  flex-grow: 1; // ensures that the footer sits at the bottom of the page regardless of content length
+}
 // structure
 .content {
   padding-left: 1rem;
