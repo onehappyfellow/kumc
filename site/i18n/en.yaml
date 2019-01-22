@@ -1,0 +1,20 @@
+- id: announcements
+  translation: "Announcements"
+- id: leaders
+  translation: "Leaders"
+- id: timeAndPlace
+  translation: "Time & Place"
+- id: contactName
+  translation: "Name"
+- id: contactEmail
+  translation: "Email"
+- id: contactMessage
+  translation: "Your message"
+- id: submit
+  translation: "Submit"
+- id: phone
+  translation: "Call"
+- id: address
+  translation: "Visit"
+- id: email
+  translation: "Email"

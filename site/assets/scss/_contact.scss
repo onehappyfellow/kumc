@@ -1,0 +1,55 @@
+.contact {
+  padding: 1rem;
+  label {
+    display: none;
+  }
+  h2 {
+    color: $blue-6;
+    margin-top: 1rem;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .btn {
+    background-color: $blue-6;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border: none;
+    &:hover, &:focus {
+      background: $blue-8;
+    }
+  }
+}
+.contact__phone {
+  a {
+    font-size: 1.5rem;
+  }
+}
+@mixin contact--sm() {
+  .contact {
+    max-width: 600px;
+  }
+}
+@mixin contact--md() {
+  .contact {
+    max-width: $break-lg;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 1rem;
+    margin-bottom: 100px;
+  }
+  .contact__phone {
+    grid-area: a;
+  }
+  .contact__address {
+    grid-area: b;
+  }
+  .contact__form {
+    grid-area: c;
+  }
+}

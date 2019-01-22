@@ -1,0 +1,20 @@
+<div class="widget__block map">
+  <h2>{{ .heading }} <i class="fas fa-car fa-lg"></i></h2>
+  <div class="widget__block--inner">
+    <div class="address__box">
+      <h3>Address</h3>
+      <address>
+        Korean United Methodist Church<br>
+        601 Tyler Rd NE<br>
+        Albuquerque, NM 87113
+      </address>
+      <h3>Directions</h3>
+      <div class="directions">
+        <a href="http://maps.apple.com/?address=601,Tyler+Rd,Albuquerque,New+Mexico">Apple Maps</a>
+        <a href="https://goo.gl/maps/FBwHxFDtaCo">Google Maps</a>
+      </div>
+    </div>
+  </div>
+  <p class="phone">{{ .phone | markdownify }}</p>
+  <p class="phone">{{ .ride | markdownify }}</p>
+</div>

@@ -1,0 +1,53 @@
+{{ define "main" }}
+  <header class="header header__education">
+    <div class="header__education--inner">
+      <h1><span>{{ .Params.title }}</span></h1>
+      <p><span>{{ .Params.subtitle }}</span></p>
+      <p class="leaders"><span>
+        {{ $len := (len .Params.leaders) }}
+        {{ range $index, $element := .Params.leaders}}
+          {{ printf "%s: %s" $element.title $element.name }}
+          {{ if lt (add $index 1) $len }}<br>{{ end }}
+        {{ end }}
+      </span></p>
+    </div>
+  </header>
+
+  <div class="content">
+    <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
+    {{ .Content }}
+  </div>
+
+
+  {{ range .Pages }}
+
+    <div class="content__image content__image--grid{{ len .Params.images }}">
+      {{ range .Params.images }}
+        <img src="{{ .url }}" alt="photo: {{ .alt }}" />
+      {{ end }}
+    </div>
+
+    <div class="education">
+
+      <h2 class="education__heading">{{ .Params.title }}</h2>
+      <h4 class="education__motto">{{ .Params.motto }}</h4>
+      {{ .Content }}
+
+      <div class="education__info">
+        <h3 class="h h1">{{ i18n "leaders" }}</h3>
+        <div class="c c1">
+          {{ range .Params.leaders }}
+            <p>{{ .title }}: {{ .name }}</p>
+          {{ end }}
+        </div>
+        <h3 class="h h2">{{ i18n "timeAndPlace" }}</h3>
+        <div class="c c2">
+          <p>{{ .Params.time }}</p>
+          <p>{{ .Params.place }}</p>
+        </div>
+      </div>
+
+    </div>
+
+  {{ end }}
+{{ end }}

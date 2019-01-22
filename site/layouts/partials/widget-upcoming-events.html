@@ -1,0 +1,17 @@
+<div class="widget__block events">
+  <h2>{{ i18n "announcements" }} <i class="far fa-calendar-alt fa-lg"></i></h2>
+  <div class="widget__block--inner">
+    <ul>
+      
+      {{ range sort (where $.Site.RegularPages "Section" "events") ".Params.start" "desc" }}
+        <li>
+          <a href="{{ .Permalink }}">
+            {{ .Params.title }}
+            <span>{{ (time .Params.start).Format $.Site.Params.dateFormat }}</span>
+          </a>
+        </li>
+			{{ end }}
+
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+/* Footer
+----------------------------------------------------------*/
+.footer {
+  background-color: $dark-blue;
+  padding: 1rem;
+  color: $grey-2;
+}
+.social__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  li {
+    margin-right: 0.5rem;
+  }
+  a {
+    color: $dark-blue;
+    .social__list--button {
+      height: 2rem;
+      width: 2rem;
+      background-color: rgba(255,255,255,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &:hover, &:focus {
+      text-decoration: none;
+      .social__list--button {
+        background-color: #fff;
+      }
+    }
+  }
+}
+.site-info {
+  margin-top: 1.5rem;
+}

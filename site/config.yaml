@@ -1,0 +1,48 @@
+baseURL: /
+title: KUMC Albuquerque
+DefaultContentLanguage: ko
+hasCJKLanguage: true
+
+languages:
+  en:
+    languageName: English
+    languageCode: en-US
+    dateFormat: 1/2/2006
+    menu:
+      main:
+        # - url: /about
+        #   name: About
+        #   weight: 1
+        # - url: /worship
+        #   name: Worship
+        #   weight: 2
+        - url: /education
+          name: Education
+          weight: 3
+        - url: /contact
+          name: Contact
+          weight: 4
+  ko:
+    languageName: 한국어
+    languageCode: ko-KR
+    dateFormat: 2006/01/02
+    menu:
+      main:
+        # - url: /about
+        #   name: 교회소개
+        #   weight: 1
+        # - url: /worship
+        #   name: 말씀과찬양
+        #   weight: 2
+        - url: /education
+          name: 교회학교
+          weight: 3
+        - url: /contact
+          name: Contact
+          weight: 4
+        - url: /voiceinthedesert
+          name: 광야의소리
+          weight: 5
+        - url: /events
+          name: 알림마당
+          weight: 6

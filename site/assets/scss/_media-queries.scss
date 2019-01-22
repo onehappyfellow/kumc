@@ -1,0 +1,31 @@
+// tablet screen size (sm)
+@media screen and (min-width: $break-sm) {
+  @include banner--sm();
+  @include home--sm();
+  @include education--sm();
+  @include contact--sm();
+}
+
+// laptop screen size (md)
+@media screen and (min-width: $break-md) {
+  @include navbar--md();
+  @include home--md();
+  @include banner--md();
+  @include education--md();
+  @include contact--md();
+}
+
+// desktop screen size (lg)
+@media screen and (min-width: $break-lg) {
+  @include navbar--lg();
+  @include home--lg();
+  @include banner--lg();
+  @include content--lg();
+  @include education--lg();
+}
+
+// print only styles
+@media print {
+
+}
+

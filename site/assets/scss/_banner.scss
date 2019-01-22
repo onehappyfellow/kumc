@@ -1,0 +1,97 @@
+/* Front Page Banner
+----------------------------------------------------------*/
+.banner {
+  width: 100%;
+  height: auto;
+  min-height: 700px;
+  background-size: cover;
+  background-image: url("img/AdobeStock_63699254.jpeg");
+  background-position-y: 30%;
+  background-position-x: 50%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.banner__inner {
+  font-size: 16px; // set absolutely all text scales off this
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 400px;
+  color: #fff;
+}
+.banner__text {
+  font-size: 1.4em;
+  text-shadow: 2px 2px 1px rgba(0,0,0,0.5);
+}
+.banner__text--heading {
+  text-shadow: 2px 2px 1px rgba(0,0,0,0.5);
+}
+.banner__text--heading > span {
+  color: #ffc000;
+}
+.banner__text--subheading {
+  font-size: 0.8em;
+  background-color: rgba(0,0,0,0.5);
+  padding: .5rem 2rem;
+  display: inline-block;
+}
+
+// font specific settings for multiple languages
+.language-en {
+  .banner__text--heading {
+    font-size: 3em;
+    // font-family: 'Charm', cursive; // alternate english headline font
+    font-family: 'Courgette', cursive;
+  }
+}
+.language-ko {
+  .banner__text--heading {
+    font-size: 5em;
+    font-family: 'Nanum Brush Script', cursive;
+  }
+}
+
+// breakpoints
+@media screen and (max-width: 320px) {
+  .banner {
+    min-height: 500px;
+  }
+  .banner__inner {
+    font-size: 14px;
+  }
+  .banner__text--heading {
+    transform: rotate(-15deg);
+  }
+}
+@mixin banner--sm() {
+  .banner__inner {
+    margin-left: 10%;
+  }
+  .language-en {
+    .banner__text--heading {
+      font-size: 4em;
+    }
+  }
+  .language-ko {
+    .banner__text--heading {
+      font-size: 7em;
+    }
+  }
+}
+@mixin banner--md() {
+  .banner__inner {
+    font-size: 18px;
+    max-width: 500px;
+  }
+}
+@mixin banner--lg() {
+  .banner {
+    min-height: 800px;
+  }
+  .banner__inner {
+    font-size: 20px;
+    max-width: 600px;
+  }
+}

@@ -1,0 +1,226 @@
+$navTextColor: $grey-8;
+$navBorderColor: $grey-2;
+$navFocus: $basic-blue;
+
+/* Text meant only for screen readers
+---------------------------------------------------------- */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/* Navbar Styles
+----------------------------------------------------------*/
+.navbar {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  a {
+    text-decoration: none;
+    color: $navTextColor;
+    display: block;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+  li {
+    border-bottom: 1px solid $navBorderColor;
+    text-align: center;
+    &:last-of-type {
+      border-bottom: transparent;
+    }
+    &:focus-within, &:hover {
+      background-color: $navFocus;
+    }
+  }
+}
+.nav__header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid $navBorderColor;
+}
+.nav__list-main {
+  display: flex;
+  flex-direction: column;
+  visibility: collapse;
+  align-items: stretch;
+  padding: 1rem;
+}
+.logo {
+  font-family: 'Nanum Myeongjo', serif;
+  position: relative;
+  padding-left: 30px; // for image alignment
+  display: block;
+  text-decoration: none;
+  color: $grey-8;
+}
+.logo span {
+  font-size: 0.5em;
+  font-family: initial;
+  &:before {
+    content: " ";
+    display: block;
+    margin-top: -12px;
+  }
+}
+#cross-and-flame {
+  position: absolute;
+  left: 0;
+  top: -5px;
+  width: 25px;
+  height: auto;
+}
+
+/* Navbar Toggle Control
+----------------------------------------------------------*/
+#toggle-checkbox {
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  display: none;
+}
+#toggle-icon {
+  position: relative;
+  padding-left: 24px;
+  height: 100%;
+  cursor: pointer;
+}
+#toggle-icon > span,
+#toggle-icon > span::before,
+#toggle-icon > span::after {
+  height: 2px;
+  width: 24px;
+  background: $navTextColor;
+  transition: all 0.25s;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+#toggle-icon > span::before {
+  content: '';
+  top: -7px;
+}
+#toggle-icon > span::after {
+  content: '';
+  top: 7px;
+}
+// following styles apply when toggled open
+#toggle-checkbox:checked ~ div #toggle-icon {
+  > span {
+    background: transparent;
+  }
+  > span::before {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+  > span::after {
+    top: 0;
+    transform: rotate(45deg);
+  }
+}
+#toggle-checkbox:checked ~ .nav__list.nav__list-main {
+  visibility: visible;
+}
+
+// something like this would need to be added for nested lists
+
+// ul li ul {
+// 	background: orange;
+// 	visibility: hidden;
+//   opacity: 0;
+//   min-width: 5rem;
+// 	position: absolute;
+//   transition: all 0.5s ease;
+//   margin-top: 1rem;
+// 	left: 0;
+//   display: none;
+// }
+
+// ul li:hover > ul,
+// ul li:focus-within > ul,
+// ul li ul:hover,
+// ul li ul:focus {
+//    visibility: visible;
+//    opacity: 1;
+//    display: block;
+// }
+
+// ul li ul li {
+// 	clear: both;
+//   width: 100%;
+// }
+
+
+@mixin navbar--md() {
+  #toggle-icon {
+    display: none;
+  }
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid $navBorderColor;
+  }
+  .nav__header {
+    display: inline-block;
+    width: auto;
+    border: none;
+  }
+  .nav__list-main {
+    visibility: visible;
+    flex-direction: row;
+    align-items: center;
+  }
+  .navbar {
+    li {
+      border: none;
+      margin-left: 1rem;
+    }
+    a {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
+}
+@mixin navbar--lg() {
+  .navbar li {
+    margin-left: 1.5rem;
+  }
+}

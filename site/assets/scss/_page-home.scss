@@ -1,0 +1,169 @@
+/* Homepage Custom Styles
+----------------------------------------------------------*/
+.widget__wrapper {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.widget__block {
+  background-color: $dark-blue; // or try #234
+  padding: 1rem;
+  background-image: url("img/grid-noise.png");
+  background-repeat: repeat;
+  & > h2 {
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 1.5rem;
+  }
+  & > p {
+    color: #fff;
+  }
+}
+.widget__block--inner {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+// block specific formatting
+.service-times {
+  p {
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+    border-bottom: 1px solid $grey-2;
+    line-height: 2rem;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  p:last-of-type {
+    border: none;
+  }
+  p > span {
+    align-self: end;
+    text-align: right;
+  }
+}
+// map widget requires lots of custom stying for position
+$map-blue: rgb(55, 79, 102); // matches the widget background after texture applied
+.map .widget__block--inner {
+  width: 100%;
+  height: 300px;
+  background-image: url("img/kumc-map.png");
+  background-position: top left;
+  background-size: cover;
+  position: relative;
+  .address__box {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1rem;
+    width: 60%;
+    padding: 0.5rem;
+  }
+}
+.address__box {
+  font-size: 12px; // set absolutely because other text scales off this
+  background-color: #fff;
+  h3 {
+    color: $map-blue;
+    font-weight: 600;
+    margin-top: 0.5em;
+    margin-bottom: 0.2em;
+    font-size: 1.2em;
+  }
+  address {
+    font-style: normal;
+    font-size: 0.9em;
+    margin-bottom: 0;
+  }
+  .directions {
+    display: flex;
+    a {
+      flex-grow: 1;
+      text-align: center;
+      padding: 0.2rem;
+      text-decoration: none;
+      background-color: $map-blue;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1em;
+      &:nth-of-type(2) {
+        background-color: $dark-blue;
+      }
+    }
+  }
+}
+.phone {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  & > a {
+    text-decoration: underline;
+    color: #fff;
+  }
+}
+.events ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  a {
+    display: grid;
+    grid-template-columns: auto auto;
+    text-decoration: none !important;
+    border-bottom: 1px solid transparent;
+    font-size: 0.8rem;
+    span {
+      align-self: end;
+      text-align: right;
+    }
+    &:hover, &:focus {
+      border-color: #0056b3;
+    }
+  }
+}
+@mixin home--sm() {
+  .widget__wrapper {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    grid-template-columns: 1fr 1fr;
+  }
+  .map {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    .widget__block--inner {
+      height: 400px;
+    }
+  }
+}
+@mixin home--md() {
+  .widget__wrapper {
+    grid-template-columns: 2fr 3fr;
+  }
+  .events {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  .map {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    .widget__block--inner {
+      height: 400px;
+    }
+  }
+}
+@mixin home--lg() {
+  .widget__wrapper {
+    max-width: $break-lg;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .events, .map {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .map .widget__block--inner {
+    height: 300px;
+  }
+}

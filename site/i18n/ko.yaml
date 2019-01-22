@@ -1,0 +1,20 @@
+- id: announcements
+  translation: "알림마당"
+- id: leaders
+  translation: "섬기는 분"
+- id: timeAndPlace
+  translation: "시간 및 장소"
+- id: contactName
+  translation: "Name"
+- id: contactEmail
+  translation: "Email"
+- id: contactMessage
+  translation: "Your message"
+- id: submit
+  translation: "Submit"
+- id: phone
+  translation: "Phone"
+- id: address
+  translation: "Address"
+- id: email
+  translation: "Phone"
