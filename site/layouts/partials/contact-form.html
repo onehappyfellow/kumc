@@ -4,17 +4,17 @@
     {{ $name := i18n "contactName" }}
     <fieldset>  
       <label for="name" class="screen-reader">{{ $name }}</label>
-      <input type="text" id="name" placeholder="{{ $name }}...">
+      <input name="name" type="text" id="name" placeholder="{{ $name }}...">
     </fieldset>
     {{ $email := i18n "contactEmail" }}
     <fieldset>
       <label for="email">{{ $email }}</label>
-      <input type="email" id="email" placeholder="{{ $email }}...">
+      <input name="email" type="email" id="email" placeholder="{{ $email }}...">
     </fieldset>
     {{ $msg := i18n "contactMessage" }}
     <fieldset>
       <label for="message">{{ $msg }}</label>
-      <textarea name="name" placeholder="{{ $msg }}..." rows="8" cols="80" id="message"></textarea>
+      <textarea name="message" placeholder="{{ $msg }}..." rows="8" cols="80" id="message"></textarea>
     </fieldset>
     <button type="submit" class="btn">{{ i18n "submit"}}</button>
   </div>
