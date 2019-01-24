@@ -1,0 +1,17 @@
+<div class="headshot">
+  <figure>
+    {{ $data := index $.Site.Data.people (index .Params 0)}}
+    <img src='{{ (print "/img/" $data.headshot) }}' >
+    <figcaption>
+      {{ if eq $.Site.Language.Lang "en" }}
+        <h4>
+          {{ $data.name.en }} <span>{{ $data.title.en }}</span>
+        </h4>
+      {{ else }}
+        <h4>
+          {{ $data.name.ko }} <span>{{ $data.title.ko }}</span>
+        </h4>  
+      {{ end }}
+    </figcaption>
+  </figure>
+</div>

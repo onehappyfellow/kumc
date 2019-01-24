@@ -12,13 +12,13 @@ languages:
       main:
         - url: /about
           name: About
-          weight: 1
+          weight: 3
         # - url: /worship
         #   name: Worship
-        #   weight: 2
+        #   weight: 1
         - url: /education
           name: Education
-          weight: 3
+          weight: 2
         - url: /contact
           name: Contact
           weight: 4
@@ -28,15 +28,15 @@ languages:
     dateFormat: 2006/01/02
     menu:
       main:
-        # - url: /about
-        #   name: 교회소개
-        #   weight: 1
+        - url: /about
+          name: 교회소개
+          weight: 3
         # - url: /worship
         #   name: 말씀과찬양
-        #   weight: 2
+        #   weight: 1
         - url: /education
           name: 교회학교
-          weight: 3
+          weight: 2
         - url: /contact
           name: Contact
           weight: 4

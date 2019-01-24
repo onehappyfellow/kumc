@@ -2,54 +2,25 @@
   <header class="header header__education">
     <div class="header__education--inner">
       <h1><span>{{ .Params.title }}</span></h1>
-      <p><span>Serving Albuquerque for {{ sub now.Year 1982 }} years</span></p>
+      <p><span>{{ printf .Params.subtitle (string (sub now.Year 1982)) }}</span></p>
     </div>
   </header>
 
   <div class="content">
-    {{ $Resources := .Page.Resources }}
     
     <h2>Church Leadership</h2>
+
     <h3>Pastors</h3>
     <div class="staff">
-      
-      {{ range sort .Params.pastors "weight" }}
-        <div class="staff__inner">
-          
-          {{ $original := $Resources.GetMatch .image }}          
-          {{ $img := $original.Fill "600x600" }}
-          <figure>
-            <img style="max-width: 100%; height: auto;" src="{{ $img.RelPermalink }}" >
-            <figcaption>
-            <small>
-                {{ .name }} <span>{{ .position }}</span>
-            </small>
-            </figcaption>
-          </figure>
-
-        </div>
+      {{ range .Params.pastors }}
+        {{ partial "headshot" (dict "ctx" $ "id" .)}}
       {{ end }}
     </div>
 
-
     <h3>Elders</h3>
     <div class="staff">
-      
-      {{ range sort .Params.elders "weight" }}
-        <div class="staff__inner">
-          
-          {{ $original := $Resources.GetMatch .image }}          
-          {{ $img := $original.Fill "600x600" }}
-          <figure>
-            <img style="max-width: 100%; height: auto;" src="{{ $img.RelPermalink }}" >
-            <figcaption>
-            <small>
-                {{ .name }} <span>{{ .position }}</span>
-            </small>
-            </figcaption>
-          </figure>
-
-        </div>
+      {{ range .Params.elders }}
+        {{ partial "headshot" (dict "ctx" $ "id" .)}}
       {{ end }}
     </div>
 
