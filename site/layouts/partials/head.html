@@ -1,12 +1,11 @@
 <head>
 
 	<title>{{ .Title }}{{ if not .IsHome }} | KUMC{{ end }}</title>
-	<!--<link rel="stylesheet" href="/css/main.css" />-->
 
+	<!-- CSS styles -->
 	{{ $options := (dict "targetPath" "style.css" "outputStyle" "compressed" "enableSourceMap" true) }}
 	{{ $styles := resources.Get "scss/main.scss" | toCSS $options }}
 	<!-- | minify | fingerprint -->
-
 	<link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen" />
 	<!-- integrity="{{ $styles.Data.Integrity }}" -->
 
@@ -14,25 +13,27 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- TODO change fonts -->
-	<!-- <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700" rel="stylesheet"> -->
+	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script|Nanum+Gothic:400,700|Nanum+Myeongjo:700&amp;subset=korean" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Charm:700|Courgette|Kaushan+Script|Tangerine:700" rel="stylesheet"> 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 	<!-- Favicons -->
-	<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon-180.png">
-	<link rel="icon" type="image/png" href="/img/favicon/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="/img/favicon/favicon-16x16.png" sizes="16x16">
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180.png">
+	<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
 	<link rel="manifest" href="/manifest.json">
-	<link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#365b8b">
+	<link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#365b8b">
 	<meta name="theme-color" content="#fff">
 
 	<!-- Open Graph -->
-	<meta property="og:type" content="business.business">
-	<meta property="og:title" content="Kaldi | Great coffee with a conscience">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="_______________________">
 	<meta property="og:url" content="/">
-	<meta property="og:image" content="/img/og-image.jpg">
+	<meta property="og:image" content="/img/________________.jpg">
+	<meta property="og:description " content="__________________">
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:locale:alternate" content="ko_KR" />
 
 	<!-- Language Translations -->
 	{{ if .IsTranslated }}
