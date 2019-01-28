@@ -32,7 +32,13 @@ img {
   }
 }
 
-
+.alert {
+  margin: 1rem;
+  padding: 0.5rem;
+  background-color: $blue-4;
+  border-left: 3px solid $blue-8;
+  color: #fff;
+}
 
 
 

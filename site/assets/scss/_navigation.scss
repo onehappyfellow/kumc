@@ -80,7 +80,7 @@ $navFocus: $basic-blue;
 .nav__list-main {
   display: flex;
   flex-direction: column;
-  visibility: collapse;
+  display: none;
   align-items: stretch;
   padding: 1rem;
 }
@@ -157,7 +157,7 @@ $navFocus: $basic-blue;
   }
 }
 #toggle-checkbox:checked ~ .nav__list.nav__list-main {
-  visibility: visible;
+  display: flex;
 }
 
 // something like this would need to be added for nested lists

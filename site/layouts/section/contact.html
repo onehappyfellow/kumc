@@ -1,6 +1,14 @@
 {{ define "main" }}
 
+{{ with .Params.alert }}
+	<div class="alert">
+		{{ . }}
+	</div>
+{{ end }}
+
 <div class="contact">
+
+	
 	
 	{{ partial "contact-form" . }}
 
