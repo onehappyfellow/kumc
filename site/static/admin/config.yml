@@ -23,7 +23,7 @@ collections: # A list of collections the CMS should be able to edit
   - name: "education"
     label: "Education"
     files:
-      - file: "site/content/children.en.md"
+      - file: "site/content/education/children.en.md"
         name: education_children_en
         label: "Sunday School (English)"
         fields:
@@ -38,7 +38,7 @@ collections: # A list of collections the CMS should be able to edit
               - {label: Role, name: title, widget: string}
               - {label: Name, name: name, widget: string}
           - {label: Body, name: body, widget: markdown}
-      - file: "site/content/children.ko.md"
+      - file: "site/content/education/children.ko.md"
         name: education_children_ko
         label: "Sunday School (Korean)"
         fields:
@@ -53,7 +53,7 @@ collections: # A list of collections the CMS should be able to edit
               - {label: Role, name: title, widget: string}
               - {label: Name, name: name, widget: string}
           - {label: Body, name: body, widget: markdown}
-      - file: "site/content/youth.en.md"
+      - file: "site/content/education/youth.en.md"
         name: education_youth_en
         label: "Youth Group (English)"
         fields:
@@ -68,7 +68,7 @@ collections: # A list of collections the CMS should be able to edit
               - {label: Role, name: title, widget: string}
               - {label: Name, name: name, widget: string}
           - {label: Body, name: body, widget: markdown}
-      - file: "site/content/youth.ko.md"
+      - file: "site/content/education/youth.ko.md"
         name: education_youth_ko
         label: "Youth Group (Korean)"
         fields:
@@ -83,7 +83,7 @@ collections: # A list of collections the CMS should be able to edit
               - {label: Role, name: title, widget: string}
               - {label: Name, name: name, widget: string}
           - {label: Body, name: body, widget: markdown}
-      - file: "site/content/college.en.md"
+      - file: "site/content/education/college.en.md"
         name: education_college_en
         label: "College Group (English)"
         fields:
@@ -98,7 +98,7 @@ collections: # A list of collections the CMS should be able to edit
               - {label: Role, name: title, widget: string}
               - {label: Name, name: name, widget: string}
           - {label: Body, name: body, widget: markdown}
-      - file: "site/content/college.ko.md"
+      - file: "site/content/education/college.ko.md"
         name: education_college_ko
         label: "College Group (Korean)"
         fields:
