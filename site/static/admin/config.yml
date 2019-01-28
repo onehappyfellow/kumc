@@ -7,105 +7,109 @@ public_folder: "img"
 # publish_mode: editorial_workflow
 
 collections: # A list of collections the CMS should be able to edit
-  - label: "Posts (en)"
-    name: "english_posts"
-    folder: "site/content/post"
-    filter: {field: "language", value: "en"}
+  - label: "Events"
+    name: "events"
+    folder: "site/content/events"
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields:
-      - {label: "Language", name: "language", widget: "select", options: [{label: "English", value: "en"},{label: "Korean", value: "ko"}]}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Intro Blurb", name: "description", widget: "text"}
+      - {label: "Event Type", name: "type", widget: "select", options: [{label: "Wedding", value: "wedding"},{label: "Funeral", value: "funeral"},{label: "Event", value: "other"}]}
+      - {label: "Date and Time", name: "date", widget: "datetime"}
+      - {label: "Title English", name: "title_en", widget: "string"}
+      - {label: "Title Korean", name: "title_ko", widget: "string"}
+      - {label: "Body English", name: "description_en", widget: "text"}
+      - {label: "Body Korean", name: "description_ko", widget: "text"}
       - {label: "Image", name: "image", widget: "image", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
-  - label: "Posts (ko)"
-    name: "korean_posts"
-    folder: "site/content/post"
-    filter: {field: "language", value: "ko"}
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Language", name: "language", widget: "select", options: [{label: "English", value: "en"},{label: "Korean", value: "ko"}]}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Intro Blurb", name: "description", widget: "text"}
-      - {label: "Image", name: "image", widget: "image", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
-
-  - name: "event"
-    label: "Event"
-    folder: "site/content/events"
-    create: true
-    fields:
-      - {label: "Language", name: "language", widget: "select", options: [{label: "English", value: "en"},{label: "Korean", value: "ko"}]}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Start time", name: "start", widget: "datetime", default: "", format: "LLLL"}
-      - {label: "Description", name: "description", widget: "text"}
-
-  - name: "pages"
-    label: "Pages"
+  - name: "education"
+    label: "Education"
     files:
-      - file: "site/content/_index.md"
-        label: "Home Page"
-        name: "home"
+      - file: "site/content/children.en.md"
+        name: education_children_en
+        label: "Sunday School (English)"
         fields:
           - {label: Title, name: title, widget: string}
-          - {label: Subtitle, name: subtitle, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: "Blurb", name: blurb, widget: object, fields: [
-              {label: "Heading", name: "heading", widget: string},
-              {label: "Text", name: "text", widget: "text"}]}
-          - {label: "Intro", name: intro, widget: object, fields: [
-              {label: "Heading", name: "heading", widget: string},
-              {label: "Text", name: "text", widget: "text"}]}
-          - {label: "Products", name: products, widget: list, fields: [
-              {label: "Image", name: "image", widget: "image"},
-              {label: "Text", name: "text", widget: "text"}]}
-          - {label: "Values", name: "values", widget: "object", fields: [
-              {label: "Heading", name: "heading", widget: string},
-              {label: "Text", name: "text", widget: "text"}]}
-      - file: "site/content/contact/_index.md"
-        label: "Contact Page"
-        name: "contact"
-        fields:
-          - {label: Title, name: title, widget: string}
-          - {label: Logo, name: logo, widget: image}
+          - {label: Motto, name: motto, widget: string}
+          - {label: Time, name: time, widget: string}
+          - {label: Place, name: place, widget: string}
+          - label: Leaders
+            name: leaders
+            widget: list
+            fields:
+              - {label: Role, name: title, widget: string}
+              - {label: Name, name: name, widget: string}
           - {label: Body, name: body, widget: markdown}
-          - label: Contact Entries
-            name: contact_entries
-            widget: list
-            fields:
-              - label: Heading
-                name: heading
-                widget: string
-              - label: Text
-                name: text
-                widget: text
-      - file: "site/content/products/_index.md"
-        label: "Products Page"
-        name: "products"
+      - file: "site/content/children.ko.md"
+        name: education_children_ko
+        label: "Sunday School (Korean)"
         fields:
           - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-          - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
-          - {label: Full_image, name: full_image, widget: image}
-          - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
-      - file: "site/content/values/_index.md"
-        label: "Values Page"
-        name: "values"
-        fields:
-          - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - label: Values
-            name: values
+          - {label: Motto, name: motto, widget: string}
+          - {label: Time, name: time, widget: string}
+          - {label: Place, name: place, widget: string}
+          - label: Leaders
+            name: leaders
             widget: list
             fields:
-              - {label: Heading, name: heading, widget: string}
-              - {label: Text, name: text, widget: text}
-              - {label: Image, name: imageUrl, widget: image}
+              - {label: Role, name: title, widget: string}
+              - {label: Name, name: name, widget: string}
+          - {label: Body, name: body, widget: markdown}
+      - file: "site/content/youth.en.md"
+        name: education_youth_en
+        label: "Youth Group (English)"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Motto, name: motto, widget: string}
+          - {label: Time, name: time, widget: string}
+          - {label: Place, name: place, widget: string}
+          - label: Leaders
+            name: leaders
+            widget: list
+            fields:
+              - {label: Role, name: title, widget: string}
+              - {label: Name, name: name, widget: string}
+          - {label: Body, name: body, widget: markdown}
+      - file: "site/content/youth.ko.md"
+        name: education_youth_ko
+        label: "Youth Group (Korean)"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Motto, name: motto, widget: string}
+          - {label: Time, name: time, widget: string}
+          - {label: Place, name: place, widget: string}
+          - label: Leaders
+            name: leaders
+            widget: list
+            fields:
+              - {label: Role, name: title, widget: string}
+              - {label: Name, name: name, widget: string}
+          - {label: Body, name: body, widget: markdown}
+      - file: "site/content/college.en.md"
+        name: education_college_en
+        label: "College Group (English)"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Motto, name: motto, widget: string}
+          - {label: Time, name: time, widget: string}
+          - {label: Place, name: place, widget: string}
+          - label: Leaders
+            name: leaders
+            widget: list
+            fields:
+              - {label: Role, name: title, widget: string}
+              - {label: Name, name: name, widget: string}
+          - {label: Body, name: body, widget: markdown}
+      - file: "site/content/college.ko.md"
+        name: education_college_ko
+        label: "College Group (Korean)"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Motto, name: motto, widget: string}
+          - {label: Time, name: time, widget: string}
+          - {label: Place, name: place, widget: string}
+          - label: Leaders
+            name: leaders
+            widget: list
+            fields:
+              - {label: Role, name: title, widget: string}
+              - {label: Name, name: name, widget: string}
+          - {label: Body, name: body, widget: markdown}
