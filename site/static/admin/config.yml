@@ -13,9 +13,9 @@ collections: # A list of collections the CMS should be able to edit
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields:
-      - {label: "Event Type", name: "type", widget: "select", options: [{label: "Wedding", value: "wedding"},{label: "Funeral", value: "funeral"},{label: "Event", value: "other"}]}
+      - {label: "Event Type", name: "type", widget: "select", options: ["Wedding", "Funeral", "Event"]}
       - {label: "Date and Time", name: "date", widget: "datetime"}
-      - {label: "Title English", name: "title_en", widget: "string"}
+      - {label: "Title English", name: "title", widget: "string"}
       - {label: "Title Korean", name: "title_ko", widget: "string"}
       - {label: "Body English", name: "description_en", widget: "text"}
       - {label: "Body Korean", name: "description_ko", widget: "text"}
