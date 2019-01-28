@@ -204,7 +204,7 @@ $navFocus: $basic-blue;
     border: none;
   }
   .nav__list-main {
-    visibility: visible;
+    display: flex;
     flex-direction: row;
     align-items: center;
   }
