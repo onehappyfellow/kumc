@@ -3,11 +3,11 @@
   <div class="widget__block--inner">
     <ul>
       
-      {{ range sort (where $.Site.RegularPages "Section" "events") ".Params.start" "desc" }}
+      {{ range sort (where $.Site.RegularPages "Section" "events") ".Params.date" "desc" }}
         <li>
           <a href="{{ .Permalink }}">
             {{ .Params.title }}
-            <span>{{ (time .Params.start).Format $.Site.Params.dateFormat }}</span>
+            <span>{{ (time .Params.date).Format $.Site.Params.dateFormat }}</span>
           </a>
         </li>
 			{{ end }}

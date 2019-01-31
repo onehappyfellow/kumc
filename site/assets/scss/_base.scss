@@ -1,7 +1,6 @@
 /* Custom Styles
 ---------------------------------------------*/
-
-body {
+.body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -10,12 +9,20 @@ body {
   color: $grey-8;
 }
 .main-block {
-  flex-grow: 1; // ensures that the footer sits at the bottom of the page regardless of content length
+  flex-grow: 1; // footer sits at the bottom of the page regardless of content length
 }
+
 // structure
 .content {
   padding-left: 1rem;
   padding-right: 1rem;
+  padding-top: 3rem;
+}
+.content__list {
+
+}
+.content__item {
+
 }
 .header {
   
@@ -25,11 +32,8 @@ img {
   height: auto;
 }
 
-.short__text {
-  &--title {
-    padding-top: 2.2rem;
-    font-size: 2rem;
-  }
+.screen-reader {
+  display: none;
 }
 
 .alert {
@@ -40,6 +44,9 @@ img {
   color: #fff;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: $blue-6;
+}
 
 
 @mixin content--lg() {

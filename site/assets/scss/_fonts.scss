@@ -7,11 +7,12 @@
 // font-family: 'Nanum Myeongjo', serif;
 // font-family: 'Nanum Brush Script', cursive;
 
+// <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet"> 
 
-// @font-face {
-//   font-family: "FlowerRoad";
-//   src: url("fonts/SangSangFlowerRoad.otf") format("opentype");
-// }
+@font-face {
+  font-family: "FlowerRoad";
+  src: url("fonts/SangSangFlowerRoad.otf") format("opentype");
+}
 // @font-face {
 //   font-family: "NewDayB";
 //   src: url("fonts/NewDayB.ttf") format("truetype");
@@ -37,19 +38,13 @@
 //   src: url("fonts/Typo_MoonFlowerL.ttf") format("truetype");
 // }
 
-body {
-  font-family: Namsan, 'Nanum Gothic', sans-serif;
+@font-face {
+  font-family: "Daniel";
+  src: url("fonts/daniel/Daniel-Regular.otf") format("opentype");
 }
-.nav-link,
-.logo {
-  font-family: 'Nanum Gothic', sans-serif;
-}
-.nav-link span,
-.logo span {
-  font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
-}
-.eng {
-  font-family: 'Noto Sans', Helvetica, Arial, sans-serif !important; 
+@font-face {
+	font-family: 'Permanent Marker';
+	src: url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 }
 
 
@@ -68,27 +63,21 @@ textarea {
 	font-size: 1rem;
 	line-height: 1.5;
 }
-
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 }
-
 p {
 	margin-bottom: 1.5em;
 }
-
 dfn, cite, em, i {
 	font-style: italic;
 }
-
 blockquote {
 	margin: 0 1.5em;
 }
-
 address {
 	margin: 0 0 1.5em;
 }
-
 pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
@@ -100,23 +89,80 @@ pre {
 	overflow: auto;
 	padding: 1.6em;
 }
-
 code, kbd, tt, var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	font-size: 15px;
 	font-size: 0.9375rem;
 }
-
 abbr, acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
 }
-
-mark, ins {
-	background: #fff9c0;
-	text-decoration: none;
-}
-
 big {
 	font-size: 125%;
+}
+
+// Custom styles
+.language-ko {
+  font-family: $font-sans-ko;
+  h1 {
+    font-size: 2.4rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  h5 {
+    font-size: 0.9rem;
+  }
+  h6 {
+    font-size: 0.8rem;
+  }
+  .lead-text {
+    font-size: 1.4rem;
+		font-weight: 300;
+		line-height: 1.6;
+	}
+	.serif {
+		font-family: $font-serif-ko !important;
+	}
+	.script {
+		font-family: $font-cursive-ko !important;
+	}
+}
+.language-en {
+  font-family: $font-sans-en;
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  h5 {
+    font-size: 0.9rem;
+  }
+  h6 {
+    font-size: 0.8rem;
+  }
+  .lead-text {
+    font-size: 1.6rem;
+    font-weight: 200;
+	}
+	.serif {
+		font-family: $font-serif-en !important;
+	}
+	.script {
+		font-family: $font-cursive-en !important;
+	}
 }

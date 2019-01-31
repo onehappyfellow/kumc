@@ -1,5 +1,25 @@
 /* Homepage Custom Styles
 ----------------------------------------------------------*/
+.language-ko #welcome-message {
+  // font-family: $font-cursive-ko !important;
+  // font-size: 1.6rem;
+  text-align: center;
+  @media screen and (min-width: $break-md) {
+    font-size: 2rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
+.language-en #welcome-message {
+  font-size: 1.2rem;
+  @media screen and (min-width: $break-md) {
+    text-align: center;
+    font-size: 1.8rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
+
 .widget__wrapper {
   display: grid;
   grid-template-columns: auto;

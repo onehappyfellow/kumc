@@ -3,7 +3,9 @@
 {{ partial "banner" .Params.banner }}
 
 <div class="content">
-  {{ partial "short-text" .Params.blurb}}
+  <p class="lead-text" id="welcome-message">
+    {{ .Params.blurb.text }}
+  </p>
 </div>
 
 <div class="widget__wrapper">

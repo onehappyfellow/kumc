@@ -85,7 +85,7 @@ $navFocus: $basic-blue;
   padding: 1rem;
 }
 .logo {
-  font-family: 'Nanum Myeongjo', serif;
+  font-family: $font-serif-ko !important;
   position: relative;
   padding-left: 30px; // for image alignment
   display: block;
@@ -94,11 +94,15 @@ $navFocus: $basic-blue;
 }
 .logo span {
   font-size: 0.5em;
-  font-family: initial;
+  font-family: $font-sans-en !important;
   &:before {
     content: " ";
     display: block;
     margin-top: -12px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 0.4em;
+    font-weight: 600;
   }
 }
 #cross-and-flame {

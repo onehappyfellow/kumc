@@ -42,14 +42,13 @@
 .language-en {
   .banner__text--heading {
     font-size: 3em;
-    // font-family: 'Charm', cursive; // alternate english headline font
-    font-family: 'Courgette', cursive;
+    font-family: $font-cursive-en;
   }
 }
 .language-ko {
   .banner__text--heading {
     font-size: 5em;
-    font-family: 'Nanum Brush Script', cursive;
+    font-family: $font-cursive-ko;
   }
 }
 

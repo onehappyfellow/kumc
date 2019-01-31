@@ -8,7 +8,7 @@
     </fieldset>
     {{ $email := i18n "contactEmail" }}
     <fieldset>
-      <label for="email">{{ $email }}</label>
+      <label for="email" class="screen-reader">{{ $email }}</label>
       <input name="email" type="email" id="email" placeholder="{{ $email }}...">
     </fieldset>
     <!-- Honeypot field to reduce spam -->
@@ -17,7 +17,7 @@
     </fieldset>
     {{ $msg := i18n "contactMessage" }}
     <fieldset>
-      <label for="message">{{ $msg }}</label>
+      <label for="message" class="screen-reader">{{ $msg }}</label>
       <textarea name="message" placeholder="{{ $msg }}..." rows="8" cols="80" id="message"></textarea>
     </fieldset>
     <button type="submit" class="btn">{{ i18n "submit"}}</button>
