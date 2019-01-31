@@ -18,3 +18,33 @@
   translation: "Visit"
 - id: email
   translation: "Email"
+- id: allEvents
+  translation: "More"
+- id: korean
+  translation: "Korean"
+- id: english
+  translation: "English"
+- id: dateAndTime
+  translation: "Date and Time"
+- id: eventDetails
+  translation: "Event Details"
+- id: typeOfEvent
+  translation: "Type of Event"
+- id: missions
+  translation: "Missions"
+- id: worship
+  translation: "Worship"
+- id: wedding
+  translation: "Wedding"
+- id: funeral
+  translation: "Funeral"
+- id: other
+  translation: "Other"
+- id: eventContact
+  translation: "Contact Info"
+- id: eventContactName
+  translation: "Your name"
+- id: eventContactPhone
+  translation: "Your phone number"
+- id: eventContactMe
+  translation: "List me as the contact"

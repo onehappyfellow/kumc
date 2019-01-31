@@ -8,8 +8,7 @@ title: "Upcoming Features"
 
 ## Critical
 - what should event details page look like?
-- events not rendering for English site
-- event form not rendering for Korean site
+- event list page including filter, pagination, link to new event
 
 
 

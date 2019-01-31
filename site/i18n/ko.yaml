@@ -5,16 +5,46 @@
 - id: timeAndPlace
   translation: "시간 및 장소"
 - id: contactName
-  translation: "Name"
+  translation: "본인 이름"
 - id: contactEmail
-  translation: "Email"
+  translation: "이메일"
 - id: contactMessage
   translation: "Your message"
 - id: submit
-  translation: "Submit"
+  translation: "보내기"
 - id: phone
-  translation: "Phone"
+  translation: "전화"
 - id: address
-  translation: "Address"
+  translation: "주소"
 - id: email
-  translation: "Phone"
+  translation: "이메일"
+- id: allEvents
+  translation: "더 보기"
+- id: korean
+  translation: "한글"
+- id: english
+  translation: "영문"
+- id: dateAndTime
+  translation: "날짜 및 시간"
+- id: eventDetails
+  translation: "이벤트 내용"
+- id: typeOfEvent
+  translation: "항목"
+- id: missions
+  translation: "선교"
+- id: worship
+  translation: "예배"
+- id: wedding
+  translation: "결혼"
+- id: funeral
+  translation: "장래"
+- id: other
+  translation: "이벤트"
+- id: eventContact
+  translation: "문의"
+- id: eventContactName
+  translation: "이름"
+- id: eventContactPhone
+  translation: "전화번호"
+- id: eventContactMe
+  translation: "List me as the contact"

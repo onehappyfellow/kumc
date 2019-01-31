@@ -3,14 +3,19 @@
   <div class="widget__block--inner">
     <ul>
       
-      {{ range sort (where $.Site.RegularPages "Section" "events") ".Params.date" "desc" }}
+      {{ range sort (where $.Site.RegularPages "Section" "events") ".Params.start" "desc" }}
         <li>
           <a href="{{ .Permalink }}">
             {{ .Params.title }}
-            <span>{{ (time .Params.date).Format $.Site.Params.dateFormat }}</span>
+            <span>{{ (time .Params.start).Format $.Site.Params.dateFormat }}</span>
           </a>
         </li>
-			{{ end }}
+      {{ end }}
+        <li>
+          <a href='{{ "/events" | relLangURL }}' style="text-align:center;display:block;">
+            {{ i18n "allEvents" }}
+          </a>
+        </li>
 
     </ul>
   </div>

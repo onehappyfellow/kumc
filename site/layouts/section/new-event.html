@@ -5,46 +5,46 @@
 <p>{{ .Params.explanation }}</p>
 
 <form name="new_event" method="POST" netlify-honeypot="bots" data-netlify="true">
-  <h2>Event Details</h2>
+  <h2>{{ i18n "eventDetails" }}</h2>
   <div class="event__registration">
 
     <!-- Date and Type -->
     <div class="date_and_type">
       <fieldset class="radio-group">
-        <label for="type">Type of event</label>
+        <label for="type">{{ i18n "typeOfEvent" }}</label>
         <select name="type" id="type">
-          <option value="worship">worship</option>
-          <option value="missions">missions</option>
-          <option value="wedding">wedding</option>
-          <option value="funeral">funeral</option>
-          <option value="other">other</option>
+          <option value="worship">{{ i18n "worship" }}</option>
+          <option value="missions">{{ i18n "missions" }}</option>
+          <option value="wedding">{{ i18n "wedding" }}</option>
+          <option value="funeral">{{ i18n "funeral" }}</option>
+          <option value="other">{{ i18n "other" }}</option>
         </select>
       </fieldset>
       <fieldset>  
-        <label for="date">Date and Time</label>
+        <label for="date">{{ i18n "dateAndTime" }}</label>
         <input name="date" type="text" id="date" placeholder='{{ now.Format "2006-01-02" }}'>
       </fieldset>
     </div>
     
     <!-- Korean -->
     <div class="korean">
-      <h4>Korean</h4>
+      <h4>{{ i18n "korean" }}</h4>
       <fieldset>  
-        <label for="title_ko" class="screen-reader">Title</label>
-        <input name="title_ko" type="text" id="title_ko" placeholder="Brief description...">
+        <label for="title_ko" class="screen-reader">제목</label>
+        <input name="title_ko" type="text" id="title_ko" placeholder="제목...">
       </fieldset>
       <fieldset>
-        <label for="content_ko" class="screen-reader">Details</label>
-        <textarea name="content_ko" rows="8" id="content_ko" placeholder="Details..." ></textarea>
+        <label for="content_ko" class="screen-reader">자세한 내용</label>
+        <textarea name="content_ko" rows="8" id="content_ko" placeholder="자세한 내용..." ></textarea>
       </fieldset>
     </div>
     
     <!-- English -->
     <div class="english">
-      <h4>English</h4>
+      <h4>{{ i18n "english" }}</h4>
       <fieldset>  
         <label for="title_en" class="screen-reader">Title</label>
-        <input name="title_en" type="text" id="title_en" placeholder="Brief description...">
+        <input name="title_en" type="text" id="title_en" placeholder="Title...">
       </fieldset>
       <fieldset>
         <label for="content_en" class="screen-reader">Details</label>
@@ -54,17 +54,17 @@
 
     <!-- Contact Info -->
     <div class="contact_info">
-      <h4>Contact Info</h4>
+      <h4>{{ i18n "eventContact" }}</h4>
       <fieldset>  
-        <label for="contact_name" class="screen-reader">Name</label>
-        <input name="contact_name" type="text" id="contact_name" placeholder="Your name...">
+        <label for="contact_name" class="screen-reader">{{ i18n "eventContactName" }}</label>
+        <input name="contact_name" type="text" id="contact_name" placeholder='{{ i18n "eventContactName" }}...'>
       </fieldset>
       <fieldset>  
-        <label for="contact_phone" class="screen-reader">Phone</label>
-        <input name="contact_phone" type="text" id="contact_phone" placeholder="Your phone number...">
+        <label for="contact_phone" class="screen-reader">{{ i18n "eventContactPhone" }}</label>
+        <input name="contact_phone" type="text" id="contact_phone" placeholder='{{ i18n "eventContactPhone" }}...'>
       </fieldset>
       <label for="contact_public">
-        <input name="contact_public" type="checkbox" id="contact_public"> List me as the contact
+        <input name="contact_public" type="checkbox" id="contact_public"> {{ i18n "eventContactMe" }}
       </label>
 
       <!-- Honeypot field to reduce spam -->
@@ -73,7 +73,7 @@
       </fieldset>
   
       <!-- Submit -->
-      <button type="submit" class="btn">Submit</button>
+      <button type="submit" class="btn">{{ i18n "submit" }}</button>
     </div>
   </div>
 </form>
