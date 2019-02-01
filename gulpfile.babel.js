@@ -52,7 +52,7 @@ gulp.task("js", (cb) => {
 
 gulp.task("svg", () => {
   const svgs = gulp
-    .src("site/static/img/icons-*.svg")
+    .src("site/assets/icons/*.svg")
     .pipe(svgmin())
     .pipe(svgstore({inlineSvg: true}));
 
@@ -74,7 +74,7 @@ gulp.task("server", ["hugo", "css", "js", "svg"], () => {
   });
   gulp.watch("./src/js/**/*.js", ["js"]);
   gulp.watch("./src/css/**/*.css", ["css"]);
-  gulp.watch("./site/static/img/icons-*.svg", ["svg"]);
+  gulp.watch("./site/assets/icons/*.svg", ["svg"]);
   gulp.watch("./site/**/*", ["hugo"]);
 });
 

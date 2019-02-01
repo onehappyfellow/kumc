@@ -166,3 +166,25 @@ big {
 		font-family: $font-cursive-en !important;
 	}
 }
+
+/*--------------------------------------------------------------
+# Icons
+--------------------------------------------------------------*/
+.icon__link {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.4);
+  &:hover {
+    background-color: rgba(0,0,0,0.6);
+  }
+}
+.icon__svg {
+  margin-left: auto;
+  margin-right: auto;
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+}
