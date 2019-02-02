@@ -9,6 +9,19 @@ leaders:
   - kim_joonho
   - choy_sam
   - cho_mike
+  - lee_sukchong
+  - yi_ted
+  - han_eunyoung
+  - choi_youngshim
+  - lee_okchu
+  - kim_sooyoung
+  - choy_kucha
+  - shin_okju
+  - choi_seongwon
+  - kim_ahnsook
+  - kim_mikyong
+
+
 history:
   - {year: 1982, event: Church Founding}
   - {year: 1984, event: Pastor Yongchi Jeong called as our first pastor, Worship services held at St Stephen’s UMC}

@@ -9,6 +9,18 @@ leaders:
   - kim_joonho
   - choy_sam
   - cho_mike
+  - lee_sukchong
+  - yi_ted
+  - han_eunyoung
+  - choi_youngshim
+  - lee_okchu
+  - kim_sooyoung
+  - choy_kucha
+  - shin_okju
+  - choi_seongwon
+  - kim_ahnsook
+  - kim_mikyong
+  
 history:
   - {year: 1982, event: 교회설립}
   - {year: 1984, event: 초대 정용치목사 부임. 예배 처소 St Stephen’s UMC .}
