@@ -2,7 +2,7 @@
 title: "알버커키연합감리교회"
 banner:
   heading: 변화
-  heading_span: 되자
+  heading_span: 되자!
   subheading: 2019 알버커키연합감리교회 표어
   text: "너희는 이 세대를 본받지 말고 오직 마음을 새롭게 함으로 변화를 받아 하나님의 선하시고 기뻐하시고 온전하신 뜻이 무엇인지 분별하도록 하라 (롬 12:2)"
 blurb:
@@ -12,10 +12,10 @@ schedule:
   heading: 예배시간
   items:
     - {service: "주일예배", time: "11:00 am"}
-    - {service: "영어예배", time: "9:45 am", indent: true}
+    - {service: "주일영어예배", time: "9:45 am"}
     - {service: "수요예배", time: "7:00 pm"}
     - {service: "새벽기도회 (화 ~ 금)", time: "5:40 am"}
-    - {service: "새벽기도회 (토)", time: "6:00 am", indent: true}
+    - {service: "새벽기도회 (토)", time: "6:00 am"}
     - {service: "월요성경공부", time: "10:30 am"}
 contact:
   heading: 오시는길

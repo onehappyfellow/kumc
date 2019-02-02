@@ -6,25 +6,35 @@
     </div>
   </header>
 
-  <div class="content">
+  <div class="content about">
     
-    <h2>Church Leadership</h2>
-
-    <h3>Pastors</h3>
-    <div class="staff">
-      {{ range .Params.pastors }}
-        {{ partial "headshot" (dict "ctx" $ "id" .)}}
-      {{ end }}
+    <div>
+      <h2>{{ i18n "churchHistory" }}</h2>
+      <ul class="about__history">
+        {{ range .Params.history }}
+          <li>
+            <p>
+              {{ .year }} :
+            </p>
+            <p>
+              {{ .event }}
+            </p>
+          </li>
+        {{ end }}
+      </ul>
     </div>
+    
+    <div>
 
-    <h3>Elders</h3>
-    <div class="staff">
-      {{ range .Params.elders }}
+      <h2>{{ i18n "aboutLeadership" }}</h2>
+      
+      <div class="staff">
+        {{ range .Params.leaders }}
         {{ partial "headshot" (dict "ctx" $ "id" .)}}
-      {{ end }}
+        {{ end }}
+      </div>
+      
     </div>
-
-    {{ .Content }}
 
   </div>
 

@@ -12,10 +12,10 @@ schedule:
   heading: Service Times
   items:
     - {service: "Sunday Traditional (Korean)", time: "11:00 am"}
-    - {service: "Contemporary (English)", time: "9:45 am", indent: true}
+    - {service: "Contemporary (English)", time: "9:45 am"}
     - {service: "Wednesday evening service", time: "7:00 pm"}
     - {service: "Morning prayer (tues - fri)", time: "5:40 am"}
-    - {service: "Morning prayer (sat)", time: "6:00 am", indent: true}
+    - {service: "Morning prayer (sat)", time: "6:00 am"}
     - {service: "Tuesday Bible study", time: "6:30 pm"}
 contact:
   heading: Find Us

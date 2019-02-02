@@ -1,7 +1,7 @@
 - id: announcements
   translation: "알림마당"
 - id: leaders
-  translation: "섬기는 분"
+  translation: "섬기는 이"
 - id: timeAndPlace
   translation: "시간 및 장소"
 - id: contactName
@@ -9,7 +9,7 @@
 - id: contactEmail
   translation: "이메일"
 - id: contactMessage
-  translation: "Your message"
+  translation: "내용"
 - id: submit
   translation: "보내기"
 - id: phone
@@ -47,4 +47,10 @@
 - id: eventContactPhone
   translation: "전화번호"
 - id: eventContactMe
-  translation: "List me as the contact"
+  translation: "이 글의 컨텍인포의 개인정보를 공개하시겠습니까 "
+- id: aboutLeadership
+  translation: "섬기는 이들"
+- id: socialMenu
+  translation: "교회 소셜 미디어 바로가기"
+- id: churchHistory
+  translation: "교회연혁"

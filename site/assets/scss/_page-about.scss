@@ -1,9 +1,31 @@
+.about__history {
+  list-style: none;
+  padding-left: 0;
+  li {
+    display: grid;
+    grid-template-columns: 4rem auto;
+    p {
+      display: inline-block;
+      text-align: left;
+      margin-bottom: 0.5rem;
+      &:first-of-type {
+        font-weight: 600;
+      }
+    }
+  }
+}
 .staff {
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
+  grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
   grid-gap: 0.5rem;
 }
+
 @mixin about--md() {
+  .about {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-gap: 1rem;
+  }
   .headshot h4 {
     font-size: 1.2rem;
   }
