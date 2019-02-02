@@ -32,6 +32,12 @@ img {
   height: auto;
 }
 
+.close {
+  border: none;
+  background: transparent;
+  position: absolute;
+  right: 0.5rem;
+}
 .screen-reader {
   display: none;
 }
@@ -42,6 +48,7 @@ img {
   background-color: $blue-4;
   border-left: 3px solid $blue-8;
   color: #fff;
+  position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -50,6 +57,11 @@ h1, h2, h3, h4, h5, h6 {
 
 
 @mixin content--lg() {
+  .alert {
+    max-width: $break-lg;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .content {
     max-width: $break-lg;
     margin-left: auto;

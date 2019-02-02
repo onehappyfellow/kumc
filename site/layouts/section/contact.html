@@ -1,8 +1,9 @@
 {{ define "main" }}
 
 {{ with .Params.alert }}
-	<div class="alert">
+	<div class="alert" id="alert">
 		{{ . }}
+		<button class="close" onclick="document.querySelector('#alert').style.display = 'none'">X</button>
 	</div>
 {{ end }}
 
