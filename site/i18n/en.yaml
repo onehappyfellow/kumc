@@ -54,3 +54,17 @@
   translation: "Visit us on social media"
 - id: churchHistory
   translation: "Church History"
+- id: eventTypeAll
+  translation: "All Recent Events"
+- id: eventTypeWorship
+  translation: "Worship"
+- id: eventTypeMissions
+  translation: "Missions"
+- id: eventTypeWedding
+  translation: "Weddings"
+- id: eventTypeFuneral
+  translation: "Funerals"
+- id: eventTypeOther
+  translation: "Other"
+- id: eventTypeNew
+  translation: "Create a new event"

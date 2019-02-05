@@ -54,3 +54,17 @@
   translation: "교회 소셜 미디어 바로가기"
 - id: churchHistory
   translation: "교회연혁"
+- id: eventTypeAll
+  translation: "All Recent Events"
+- id: eventTypeWorship
+  translation: "예배"
+- id: eventTypeMissions
+  translation: "선교"
+- id: eventTypeWedding
+  translation: "결혼"
+- id: eventTypeFuneral
+  translation: "장래"
+- id: eventTypeOther
+  translation: "이벤트"
+- id: eventTypeNew
+  translation: "Create a new event"

@@ -3,6 +3,9 @@ title: KUMC Albuquerque
 DefaultContentLanguage: ko
 hasCJKLanguage: true
 
+taxonomies:
+  event: "events"
+
 languages:
   en:
     languageName: English

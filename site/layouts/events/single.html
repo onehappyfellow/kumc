@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+<div class="content events__content">
+
+  <div class="event__details">
+    <h1>{{ .Params.title }}</h1>
+    <h6>
+      <!-- Date -->
+      {{ (time .Params.start).Format $.Site.Params.dateFormat }}
+      <!-- Time -->
+    </h6>
+    <p>{{ .Params.description }}</p>
+    {{ .Content }}
+  </div>
+
+  {{ partial "event-menu" . }}
+</div>
+
+{{ end }}
