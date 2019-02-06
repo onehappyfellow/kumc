@@ -1,0 +1,29 @@
+{{ define "main" }}
+
+<div class="content events__content">
+  
+  {{ $filter := .Params.filter }}
+  {{ $allEvents := where $.Site.RegularPages "Section" "events"}}
+  {{ $filtered := sort (where $allEvents ".Params.category" $filter) ".Params.Date" "desc" }}
+  
+  {{ if eq (len $filtered) 0 }}
+    <h2>No records found</h2>
+  {{ else }}
+    <div>
+    <ul class="content__list">
+      {{ range (.Paginate $filtered 6).Pages }}
+      
+        {{ .Render "li"}}
+      {{ end }}
+    </ul>
+    {{ partial "pagination" . }}
+    </div>
+  {{ end }}
+  
+  {{ partial "event-menu" . }}
+</div>
+{{end}}
+
+
+
+

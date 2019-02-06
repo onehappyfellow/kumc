@@ -1,32 +1,14 @@
 {{ define "main" }}
 <div class="content events__content">
-
-  {{if or (eq .Permalink "/events/") (eq .Permalink "/en/events/")}}
-  <!-- use custom loop to override effect of taxonomies -->
-  <ul class="content__list">
-    {{ range sort (where $.Site.RegularPages "Section" "events") ".Params.start" "desc" }}
-    <div class="content__item">
-      <a href="{{ .Permalink }}">
-        <h2 class="title">{{ .Title }}<span> {{ .Date.Format $.Site.Params.dateFormat }}</span></h2>
-      </a>
-    </div>
-    {{ end }}
-  </ul>
-  {{ partial "pagination" . }}
   
-  {{ else }}
-  <!-- if used in the context of a category, stick with defaults -->
-  <ul class="content__list">
-    {{ range sort (.Paginator 4).Pages ".Params.start" "desc" }}
-    <div class="content__item">
-      <a href="{{ .Permalink }}">
-        <h2 class="title">{{ .Title }}<span> {{ .Date.Format $.Site.Params.dateFormat }}</span></h2>
-      </a>
-    </div>
-    {{ end }}
-  </ul>
-  {{ partial "pagination" . }}
-  {{ end }}
+  <div>
+    <ul class="content__list">
+      {{ range sort (.Paginator 6).Pages ".Params.start" "desc" }}
+        {{ .Render "li" }}
+      {{ end }}
+    </ul>
+    {{ partial "pagination" . }}
+  </div>
   
   {{ partial "event-menu" . }}
 </div>

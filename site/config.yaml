@@ -2,9 +2,7 @@ baseURL: /
 title: KUMC Albuquerque
 DefaultContentLanguage: ko
 hasCJKLanguage: true
-
-taxonomies:
-  event: "events"
+PaginatePath: "p"
 
 languages:
   en:

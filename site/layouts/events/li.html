@@ -1,5 +1,8 @@
 <a href="{{ .Permalink }}">
-	<h2 class="title">{{ .Title }}</h2>
-	{{ $.Site.Params.dateFormat }}
-	<p class="date">{{ .Date.Format $.Site.Params.dateFormat }}</p>
+	<h2 class="title">
+		{{ .Title }} <span>
+			{{ (time .Params.start).Format $.Site.Params.dateFormat }}
+		</span>
+	</h2>
+	<p>{{ .Params.description | truncate 60 }}</p>
 </a>
