@@ -3,7 +3,7 @@
   <div class="widget__block--inner">
     <ul>
       
-      {{ range sort (where $.Site.RegularPages "Section" "events") ".Params.start" "desc" }}
+      {{ range sort (where $.Site.RegularPages "Section" "events") ".Params.start" "desc" | first 10 }}
         <li>
           <a href="{{ .Permalink }}">
             {{ .Params.title }}

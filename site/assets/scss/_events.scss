@@ -1,11 +1,23 @@
-.events {
-
+.events__content {
+  .content__list {
+    padding-left: 0;
+  }
 }
-.content__list {
-  padding-left: 0;
+.event__li {
+  list-style: none;
   .title {
     span {
-      font-size: 0.7em;
+      font-size: 0.9em;
+    }
+  }
+  a {
+    text-decoration: none;
+    div {
+      transition: 0.3       s;
+    }
+    &:hover > div, &:focus > div {
+      border-left: 0.5rem solid $blue-8;
+      padding-left: 0.5rem;
     }
   }
 }
@@ -16,13 +28,49 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
-  $linkbg: $blue-6;
   li {
-    background-color: lighten($linkbg, 5%);
+    background-color: $blue-6;
     padding: 0.5rem;
     height: 80px;
-    &:nth-of-type(2n) {
-      background-color: darken($linkbg, 5%);
+    background-size: cover;
+    background-blend-mode: luminosity;
+    div {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba($blue-8, 0.7);
+    }
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  .event__item {
+    &--all {
+      background-image: url(https://source.unsplash.com/ZMMXSRMSoI8/200x150);
+    }
+    &--worship {
+      background-image: url(https://source.unsplash.com/rPOmLGwai2w/200x150);
+    }
+    &--missions {
+      background-image: url(https://source.unsplash.com/iQWvVYMtv1k/200x150);
+      div {
+        background-color: rgba($blue-8, 0.7);
+      }
+    }
+    &--wedding {
+      background-image: url(https://source.unsplash.com/U4sdfvlWmwI/200x150);
+    }
+    &--funeral {
+      background-image: url(https://source.unsplash.com/i4NqeIHNbTI/200x150);
+      // nT4NaC8dgT8
+    }
+    &--other {
+      background-image: url(https://source.unsplash.com/Hli3R6LKibo/200x150);
+    }
+    &--new {
+      background-image: url(https://source.unsplash.com/g3O5ZtRk2E4/200x150);
     }
   }
   a {
@@ -34,6 +82,7 @@
     text-align: center;
     text-decoration: none;
     color: #fff;
+    font-weight: 600;
   }
 }
 @mixin events--md() {
@@ -55,16 +104,15 @@
     }
     $linkbg: $blue-6;
     li {
-      background-color: lighten($linkbg, 5%);
       padding: 0.5rem;
       height: 80px;
-      &:nth-of-type(2n) {
+      &:nth-of-type(2),
+      &:nth-of-type(3),
+      &:nth-of-type(6),
+      &:nth-of-type(7) {
         background-color: darken($linkbg, 5%);
       }
-      &:nth-of-type(3n) {
-        background-color: darken($linkbg, 5%);
-      }
-      &:nth-of-type(4n) {
+      &:nth-of-type(4) {
         background-color: lighten($linkbg, 5%);
       }
     }

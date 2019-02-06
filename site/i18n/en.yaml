@@ -68,3 +68,7 @@
   translation: "Other"
 - id: eventTypeNew
   translation: "Create a new event"
+- id: noRecords
+  translation: "No records found"
+- id: menu
+  translation: "Menu"

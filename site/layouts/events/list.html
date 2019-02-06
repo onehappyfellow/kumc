@@ -2,6 +2,7 @@
 <div class="content events__content">
   
   <div>
+    <h1>{{ i18n "eventTypeAll" }}</h1>
     <ul class="content__list">
       {{ range sort (.Paginator 6).Pages ".Params.start" "desc" }}
         {{ .Render "li" }}

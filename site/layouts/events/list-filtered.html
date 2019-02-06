@@ -6,19 +6,21 @@
   {{ $allEvents := where $.Site.RegularPages "Section" "events"}}
   {{ $filtered := sort (where $allEvents ".Params.category" $filter) ".Params.Date" "desc" }}
   
-  {{ if eq (len $filtered) 0 }}
-    <h2>No records found</h2>
-  {{ else }}
-    <div>
-    <ul class="content__list">
-      {{ range (.Paginate $filtered 6).Pages }}
-      
-        {{ .Render "li"}}
-      {{ end }}
-    </ul>
-    {{ partial "pagination" . }}
-    </div>
-  {{ end }}
+  <div>
+    {{ $filterTitle := print "eventType" (strings.Title $filter) }}
+    <h1>{{ i18n $filterTitle }}</h1>
+    {{ if eq (len $filtered) 0 }}
+      <h2>{{ i18n "noRecords" }}</h2>
+    {{ else }}
+      <ul class="content__list">
+        {{ range (.Paginate $filtered 6).Pages }}
+        
+          {{ .Render "li"}}
+        {{ end }}
+      </ul>
+      {{ partial "pagination" . }}
+    {{ end }}
+  </div>
   
   {{ partial "event-menu" . }}
 </div>
