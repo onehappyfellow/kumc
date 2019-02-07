@@ -1,15 +1,25 @@
 <footer class="footer">
 	
+	<div class="footer__menu">
 
-	<div>
-		<h3>{{ i18n "socialMenu" }}</h3>
-		{{ partial "social-links" }}
+		<div>
+			<h3>{{ i18n "socialMenu" }}</h3>
+			{{ partial "social-links" }}
+		</div>
+
+		{{ partial "photo-link" (dict "name" "voiceinthewilderness" "url" "voiceofnm") }}
+
 	</div>
 
 	<div class="site-info">
 		Copyright 2019 Korean United Methodist Church
 	</div>
 
+
 </footer>
 
 <script src="/app.js"></script>
+
+
+
+

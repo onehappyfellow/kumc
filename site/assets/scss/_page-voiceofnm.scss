@@ -1,0 +1,124 @@
+.header__voiceofnm {
+  $bgcolor: $blue-9;
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  background-size: cover;
+  background-image: 
+    // linear-gradient($bgcolor, $bgcolor),
+    url("img/Balloon_4637.jpg");
+  // background-blend-mode: saturation;
+  background-blend-mode: normal;
+  background-position-y: 50%;
+  padding: 2rem 1rem; 
+  h1 > span, p > span {
+    color: #fff;
+    background: $blue-9;
+  }
+  h1 > span {
+    font-size: 3rem;
+  }
+  p > span {
+    font-size: 1rem;
+  }
+}
+.voiceofnm__current {
+  &--head {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    > div {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .btn {
+    color: #fff;
+    text-decoration: none !important;
+  }
+}
+.voiceofnm__backissues {
+  ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  ul ul {
+    padding-left: 1rem;
+  }
+}
+.voiceofnm {
+  h1 {
+    text-align: center;
+  }
+}
+.voiceofnm__signup {
+  padding: 1rem;
+  background-color: $blue-6;
+  background-image: url(https://source.unsplash.com/pwW2iV9TZao/600x450);
+  background-size: cover;
+  background-blend-mode: luminosity;
+  margin-bottom: 2rem;
+  > div {
+    height: 100%;
+    width: 100%;
+    background-color: rgba($blue-8, 0.85);
+    padding: 1rem 2rem;
+    color: #fff;
+    h3 {
+      color: #fff;
+    }
+    .btn {
+      border: 2px solid transparent;
+      &:hover {
+        border-color: #fff;
+      }
+    }
+  }
+}
+
+@mixin voiceofnm--sm() {
+  .voiceofnm__current {
+    grid-column: 2 / 3;
+    grid-row-start: 1;
+    &--head {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    &--img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .voiceofnm__backissues {
+    grid-column: 1 / 2;
+    grid-row-start: 1;
+    display: block;
+  }
+  .voiceofnm__signup {
+    grid-column: 1 / 3;
+  }
+  .voiceofnm {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 1rem;
+    h1 {
+      text-align: left;
+    }
+  }
+}
+
+@mixin voiceofnm--lg() {
+  .header__voiceofnm--inner {
+    max-width: $break-lg;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .voiceofnm__signup {
+    grid-column: 2 / 3;
+  }
+}

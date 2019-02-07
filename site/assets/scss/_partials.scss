@@ -3,3 +3,33 @@
     font-size: 0.8rem;
   }
 }
+
+.photo__link {
+  background-color: $blue-6;
+  padding: 0.5rem;
+  height: 80px;
+  background-size: cover;
+  background-blend-mode: luminosity;
+  div {
+    height: 100%;
+    width: 100%;
+    background-color: rgba($blue-8, 0.7);
+  }
+  a {
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.5rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+  &--voiceinthewilderness {
+    background-image: url(https://source.unsplash.com/pwW2iV9TZao/200x150);
+  }
+}

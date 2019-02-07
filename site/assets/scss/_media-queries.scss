@@ -4,6 +4,7 @@
   @include home--sm();
   @include education--sm();
   @include contact--sm();
+  @include voiceofnm--sm();
 }
 
 // laptop screen size (md)
@@ -25,6 +26,7 @@
   @include banner--lg();
   @include content--lg();
   @include education--lg();
+  @include voiceofnm--lg();
 }
 
 // print only styles

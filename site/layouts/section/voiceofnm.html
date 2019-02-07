@@ -1,0 +1,87 @@
+{{ define "main" }}
+  <header class="header header__voiceofnm">
+    <div class="header__voiceofnm--inner">
+      <h1><span>{{ .Params.title }}</span></h1>
+      <p><span>{{ .Params.subtitle }}</span></p>
+    </div>
+  </header>
+
+  {{ with .Params.englishonly }}
+  <div class="content">
+    <h3>{{ . }}</h3>
+  </div>
+  {{ end }}
+
+  <div class="content voiceofnm">
+    
+    {{ $issues := (sort $.Site.Data.voiceofnm "filename" "desc") }}
+    
+    {{ range $issues | first 1 }}
+      <div class="voiceofnm__current">
+        <div class="voiceofnm__current--head">
+          <h1>최근호</h1>
+          <div>
+            <a class="btn btn--download" href="/voiceofnm/{{ .filename }}" download>PDF File을 다운</a>
+          </div>
+        </div>
+        <img src="/voiceofnm/{{ .filename }}.front.jpg" class="voiceofnm__current--img" />
+      </div>
+    {{ end }}
+
+    <div class="voiceofnm__backissues">
+      <h1>지난호</h1>
+      <ul id="backissues">
+        {{ $year := ""}}
+        {{ range after 1 $issues }}
+          
+          <!-- if $year exists && .year != $year , close old year-->
+          {{ if (and (gt (len $year) 0) (ne $year .year))}}
+            </ul></li>
+          {{ end }}
+
+          <!-- if $year == "" || .year !- $year, start year ul and set $year -->
+          {{ if (or (eq (len $year) 0) (ne $year .year))}}
+            <li>{{ .year }}년<ul>
+            {{ $year = .year }}
+          {{ end }}
+
+          <!-- always create list item for the issue -->
+          <li>
+            <a href="/voiceofnm/{{ .filename }}" download>
+              {{ .firstmonth }}{{ with .lastmonth }}{{ (print " / " .) }}{{ end }} 월호
+            </a>
+          </li>
+
+        {{ end }}
+      </ul>
+    </div>
+
+    <div class="voiceofnm__signup">
+      <div>
+
+      <h3>편하게 이메일로 광야의 소리를 받으세요!</h3>
+      <p>
+        온라인으로 뉴스레터를 받아보시길 원하시는 분께서는 E-Mail 주소로 신청해주시길 바랍니다
+      </p>
+      
+      <form name="voiceofnm" action='{{ "/contact/thanks" | relLangURL }}' method="POST" netlify-honeypot="bots" data-netlify="true">
+        <div class="contact__form">
+          <h3>{{ i18n "email" }} <i class="far fa-envelope"></i></h3>
+          {{ $email := i18n "contactEmail" }}
+          <fieldset>
+            <label for="email" class="screen-reader">{{ $email }}</label>
+            <input name="email" type="email" id="email" placeholder="{{ $email }}...">
+          </fieldset>
+          <!-- Honeypot field to reduce spam -->
+          <fieldset style="display:none;">
+            <label>Don’t fill this out if you're human: <input name="bots" /></label>
+          </fieldset>
+          <button type="submit" class="btn">{{ i18n "submit"}}</button>
+        </div>
+      </form>
+
+      </div>
+    </div>
+
+  </div>
+{{ end }}

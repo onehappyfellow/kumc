@@ -11,6 +11,9 @@ import svgstore from "gulp-svgstore";
 import svgmin from "gulp-svgmin";
 import inject from "gulp-inject";
 import cssnano from "cssnano";
+import debug from "gulp-debug";
+import tap from "gulp-tap";
+import fs from "fs";
 
 const browserSync = BrowserSync.create();
 const hugoBin = `./bin/hugo.${process.platform === "win32" ? "exe" : process.platform}`;
@@ -66,7 +69,29 @@ gulp.task("svg", () => {
     .pipe(gulp.dest("site/layouts/partials/"));
 });
 
-gulp.task("server", ["hugo", "css", "js", "svg"], () => {
+gulp.task("voiceofnm",() => {
+  const makefile = data => {
+    const { year, firstmonth } = JSON.parse(data);
+    fs.writeFile(`./site/data/voiceofnm/${year}${firstmonth}.json`, data, (err) => {
+      if (err) return console.error(err);
+    });
+  }
+
+  return gulp
+    .src("./site/static/voiceofnm/*.pdf")
+    // .pipe(debug({title: 'working with file:'}))
+    .pipe(tap(function(file) {
+      const data = {}
+      data.filename = file.path.split('\\').pop().split('/').pop();
+      const datenums = data.filename.match(/[0-9]{4}.*[0-9]/)[0].replace("-","");
+      data.year = datenums.slice(0,4);
+      data.firstmonth = datenums.slice(4,6);
+      data.lastmonth = datenums.slice(6,8);
+      makefile(JSON.stringify(data));
+    }));
+});
+
+gulp.task("server", ["hugo", "css", "js", "svg", "voiceofnm"], () => {
   browserSync.init({
     server: {
       baseDir: "./dist"

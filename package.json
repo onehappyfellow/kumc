@@ -9,7 +9,8 @@
     "build": "gulp build",
     "build-preview": "gulp build-preview",
     "start": "gulp server",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "test": "gulp voiceofnm"
   },
   "author": "",
   "license": "MIT",
@@ -50,9 +51,12 @@
     "whatwg-fetch": "^2.0.0"
   },
   "devDependencies": {
+    "fs": "0.0.1-security",
+    "gulp-debug": "^4.0.0",
     "gulp-inject": "^5.0.0",
     "gulp-svgmin": "^1.2.3",
     "gulp-svgstore": "^6.1.0",
+    "gulp-tap": "^1.0.1",
     "svg-sprite-loader": "^3.0.0"
   }
 }
