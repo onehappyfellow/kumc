@@ -1,3 +1,4 @@
+<div>
 <form name="contact" action='{{ "/contact/thanks" | relLangURL }}' method="POST" netlify-honeypot="bots" data-netlify="true">
   <div class="contact__form">
     <h2>{{ i18n "email" }} <i class="far fa-envelope"></i></h2>
@@ -23,3 +24,10 @@
     <button type="submit" class="btn">{{ i18n "submit"}}</button>
   </div>
 </form>
+
+  <div class="alert" id="alert">
+    <span id="alert__content"></span>
+		<button class="close" onclick="document.querySelector('#alert').style.display = 'none'">X</button>
+  </div>
+  
+</div>
