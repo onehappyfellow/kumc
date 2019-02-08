@@ -37,16 +37,16 @@ img {
   background: transparent;
   position: absolute;
   right: 0.5rem;
+  top: 0.5rem
 }
 .screen-reader {
   display: none;
 }
 
 .alert {
-  margin: 1rem;
   padding: 0.5rem;
   background-color: $blue-4;
-  border-left: 3px solid $blue-8;
+  border-left: 0.5rem solid $blue-8;
   color: #fff;
   position: relative;
 }
