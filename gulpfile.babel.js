@@ -16,7 +16,6 @@ import tap from "gulp-tap";
 import fs from "fs";
 
 const browserSync = BrowserSync.create();
-const hugoBin = `./bin/hugo.${process.platform === "win32" ? "exe" : process.platform}`;
 const defaultArgs = ["-d", "../dist", "-s", "site"];
 
 if (process.env.DEBUG) {
@@ -106,7 +105,7 @@ gulp.task("server", ["hugo", "css", "js", "svg", "voiceofnm"], () => {
 function buildSite(cb, options) {
   const args = options ? defaultArgs.concat(options) : defaultArgs;
 
-  return cp.spawn(hugoBin, args, {stdio: "inherit"}).on("close", (code) => {
+  return cp.spawn("hugo", args, {stdio: "inherit"}).on("close", (code) => {
     if (code === 0) {
       browserSync.reload("notify:false");
       cb();
