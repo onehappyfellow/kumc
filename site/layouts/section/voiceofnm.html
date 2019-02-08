@@ -64,7 +64,8 @@
         온라인으로 뉴스레터를 받아보시길 원하시는 분께서는 E-Mail 주소로 신청해주시길 바랍니다
       </p>
       
-      <form name="voiceofnm" action='{{ "/contact/thanks" | relLangURL }}' method="POST" netlify-honeypot="bots" data-netlify="true">
+      <div id="form_wrapper" style="transition:0.5s">
+      <form id="voiceofnm__form" name="voiceofnm" action="/" method="POST" netlify-honeypot="bots" data-netlify="true">
         <div class="contact__form">
           <h3>{{ i18n "email" }} <i class="far fa-envelope"></i></h3>
           {{ $email := i18n "contactEmail" }}
@@ -79,6 +80,23 @@
           <button type="submit" class="btn">{{ i18n "submit"}}</button>
         </div>
       </form>
+      </div>
+
+      <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+      <script>
+      $("form").submit(function(e) {
+        e.preventDefault();
+        var $form = $(this);
+        $.post($form.attr("action"), $form.serialize()).then(function() {
+          const target = document.querySelector("#form_wrapper");
+          const height = target.offsetHeight;
+          const html = `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:${height}px"><h3>Thank you <i class="fas fa-check"></i></h3><p>Please check your inbox</p></div>`;
+          target.innerHTML = html;  
+        });
+      });
+      </script>
+
+      
 
       </div>
     </div>
