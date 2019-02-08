@@ -4,7 +4,7 @@
   
 [build.environment]
   YARN_VERSION = "1.9.4"
-  HUGO_VERSION = "0.54"
+  HUGO_VERSION = "0.54.0"
 
 [context.deploy-preview]
   command = "npm run build-preview"
