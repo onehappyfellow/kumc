@@ -25,9 +25,8 @@
   </div>
 </form>
 
-  <div class="alert" id="alert">
-    <span id="alert__content"></span>
-		<button class="close" onclick="document.querySelector('#alert').style.display = 'none'">X</button>
-  </div>
-  
+  {{ partial "alert" . }}
+
 </div>
+
+{{ partial "ajax-form-js" "contact"}}

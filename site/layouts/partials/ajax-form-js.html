@@ -1,0 +1,14 @@
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+
+$("form").submit(function(e) {
+  e.preventDefault();
+  var $form = $(this);
+  $.post($form.attr("action"), $form.serialize()).then(function() {
+    $form[0].reset();
+    $("#alert__content").text('{{ i18n (print "formSuccessMsg-" . )}}');
+    $("#alert").css("display","block");
+  });
+});
+
+</script>

@@ -74,3 +74,7 @@
   translation: "Menu"
 - id: voiceinthewilderness
   translation: "Voice in the Wilderness"
+- id: formSuccessMsg-new_event
+  translation: "Thank you. This information has been saved. If we have questions we will contact you."
+- id: formSuccessMsg-contact
+  translation: "Thanks for contacting us! Your email has been sent."

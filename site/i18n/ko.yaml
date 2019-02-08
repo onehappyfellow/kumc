@@ -74,3 +74,7 @@
   translation: "Menu"
 - id: voiceinthewilderness
   translation: "광야의 소리"
+- id: formSuccessMsg-new_event
+  translation: "Thank you. This information has been saved. If we have questions we will contact you."
+- id: formSuccessMsg-contact
+  translation: "이메일은 성공적으로 보내렸습니다. 이용해주셔서 감사합니다."

@@ -80,30 +80,12 @@
         </div>
       </form>
 
-      <div class="alert" id="alert">
-        <span id="alert__content"></span>
-        <button class="close" onclick="document.querySelector('#alert').style.display = 'none'">X</button>
-      </div>
-
+      {{ partial "alert" . }}
 
   </div>
   {{ partial "event-menu" . }}
 </div>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script>
-
-$("form").submit(function(e) {
-  e.preventDefault();
-  var $form = $(this);
-  $.post($form.attr("action"), $form.serialize()).then(function() {
-    alert("Thank you!");
-  });
-  $form[0].reset();
-  $("#alert__content").text("Thank you. This information has been saved. If we have questions we will contact you.");
-  $("#alert").css("display","block");
-});
-
-</script>
+{{ partial "ajax-form-js" "new_event"}}
 
 {{end}}
