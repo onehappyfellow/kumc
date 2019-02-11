@@ -14,6 +14,9 @@ import cssnano from "cssnano";
 import debug from "gulp-debug";
 import tap from "gulp-tap";
 import fs from "fs";
+import imagemin from "imagemin";
+import webp from "imagemin-webp";
+
 
 const browserSync = BrowserSync.create();
 const defaultArgs = ["-d", "../dist", "-s", "site"];
@@ -50,6 +53,9 @@ gulp.task("js", (cb) => {
     browserSync.reload();
     cb();
   });
+
+  gulp.src("./src/js/*.js")
+    .pipe(gulp.dest("./dist/js"));
 });
 
 gulp.task("svg", () => {
@@ -90,7 +96,24 @@ gulp.task("voiceofnm",() => {
     }));
 });
 
-gulp.task("server", ["hugo", "css", "js", "svg", "voiceofnm"], () => {
+gulp.task("images", () => {
+  const JPEGImages = "./site/static/img/*.jpg";
+  const PNGImages = "./site/static/img/*.png";
+  const outputFolder = "./site/static/img";
+
+  imagemin([PNGImages], outputFolder, {
+    plugins: [webp({
+        lossless: true // Losslessly encode images
+    })]
+  });
+  imagemin([JPEGImages], outputFolder, {
+    plugins: [webp({
+      quality: 65 // Quality setting from 0 to 100
+    })]
+  });
+});
+
+gulp.task("server", ["hugo", "css", "js", "svg", "images", "voiceofnm"], () => {
   browserSync.init({
     server: {
       baseDir: "./dist"

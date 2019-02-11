@@ -1,7 +1,11 @@
 <div class="headshot">
   <figure>
     {{ $data := index .ctx.Site.Data.people .id}}
-    <img src='{{ (print "/img/" $data.headshot) }}' >
+    {{ $img := strings.TrimRight ".jpg" $data.headshot }}
+    <picture>
+      <source srcset="/img/{{ $img }}.webp" type="image/webp">
+      <img src="/img/{{ $img }}.jpg" >
+    </picture>
     <figcaption>
       {{ if eq .ctx.Site.Language.Lang "en" }}
         <h4>

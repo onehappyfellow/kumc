@@ -6,11 +6,14 @@
   height: auto;
   min-height: 700px;
   background-size: cover;
-  background-image: url("img/AdobeStock_63699254.jpeg");
+  background-image: url("img/AdobeStock_63699254_min.jpeg");
   background-position-y: 30%;
   background-position-x: 50%;
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+.webp .banner {
+  background-image: url("img/AdobeStock_63699254_min.webp");
 }
 .banner__inner {
   font-size: 16px; // set absolutely all text scales off this

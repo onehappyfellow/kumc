@@ -6,15 +6,15 @@
     height: auto;
   }
 }
+$bgcolor: $blue-9;
 .header__education {
-  $bgcolor: $blue-9;
   width: 100%;
   height: auto;
   min-height: 300px;
   background-size: cover;
   background-image: 
     linear-gradient($bgcolor, $bgcolor),
-    url("img/aaron-burden-169739-unsplash.jpg");
+    url("img/aaron-burden-169739-unsplash_min.jpg");
   background-blend-mode: saturation;
   background-position-y: 50%;
   padding: 2rem 1rem; 
@@ -33,6 +33,11 @@
     opacity: 0.6;
   }
   margin-bottom: 2rem;
+}
+.webp .header__education {
+  background-image: 
+    linear-gradient($bgcolor, $bgcolor),
+    url("img/aaron-burden-169739-unsplash_min.webp");
 }
 .education {
   $base: darken($blue-4, 5%);

@@ -4,10 +4,8 @@
 
 	<!-- CSS styles -->
 	{{ $options := (dict "targetPath" "style.css" "outputStyle" "compressed" "enableSourceMap" true) }}
-	{{ $styles := resources.Get "scss/main.scss" | toCSS $options }}
-	<!-- | minify | fingerprint -->
-	<link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen" />
-	<!-- integrity="{{ $styles.Data.Integrity }}" -->
+	{{ $styles := resources.Get "scss/main.scss" | toCSS $options | minify | fingerprint }}
+	<link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen" integrity="{{ $styles.Data.Integrity }}" />
 
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -28,12 +26,12 @@
 
 	<!-- Open Graph -->
 	<meta property="og:type" content="website">
-	<meta property="og:title" content="_______________________">
+	<meta property="og:title" content="{{ .Title }}">
 	<meta property="og:url" content="/">
 	<meta property="og:image" content="/img/________________.jpg">
-	<meta property="og:description " content="__________________">
-	<meta property="og:locale" content="en_US" />
-	<meta property="og:locale:alternate" content="ko_KR" />
+	<meta property="og:description " content="알버커키 연합감리교회홈페이지에 오신 것을 환영합니다. 우리 교회는 성경에 기록된 교회처럼 열정적인 영성으로 예배를 드리는 교회, 헌신적인 사랑으로 서로 돌아보는 교회, 지역 사회에 선한 영향을 주는 교회가 되기를 추구합니다.">
+	<meta property="og:locale" content="ko_KR" />
+	<meta property="og:locale:alternate" content="en_US" />
 
 	<!-- Language Translations -->
 	{{ if .IsTranslated }}
@@ -43,4 +41,5 @@
 	{{ end }}
 
 	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+	<script src="/js/modernizr.js"></script>
 </head>

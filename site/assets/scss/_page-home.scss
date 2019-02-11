@@ -81,6 +81,9 @@ $map-blue: rgb(55, 79, 102); // matches the widget background after texture appl
     padding: 0.5rem;
   }
 }
+.webp .map .widget__block--inner {
+  background-image: url("img/kumc-map.webp");
+}
 .address__box {
   font-size: 12px; // set absolutely because other text scales off this
   background-color: #fff;

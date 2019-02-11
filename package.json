@@ -57,6 +57,8 @@
     "gulp-svgmin": "^1.2.3",
     "gulp-svgstore": "^6.1.0",
     "gulp-tap": "^1.0.1",
+    "imagemin": "^6.1.0",
+    "imagemin-webp": "^5.0.0",
     "svg-sprite-loader": "^3.0.0"
   }
 }
