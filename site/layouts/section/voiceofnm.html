@@ -13,8 +13,7 @@
   {{ end }}
 
   <div class="content voiceofnm">
-    
-    {{ $issues := (sort $.Site.Data.voiceofnm "filename" "desc") }}
+    {{ $issues := (sort $.Site.Data.voiceofnm "key" "desc") }}
     
     {{ range $issues | first 1 }}
       <div class="voiceofnm__current">
@@ -24,7 +23,7 @@
             <a class="btn btn--download" href="/voiceofnm/{{ .filename }}" download>PDF File을 다운</a>
           </div>
         </div>
-        <img src="/voiceofnm/{{ .filename }}.front.jpg" class="voiceofnm__current--img" />
+        <img src='/voiceofnm/{{ replace .filename ".pdf" ".jpg" }}' class="voiceofnm__current--img" />
       </div>
     {{ end }}
 
@@ -32,7 +31,7 @@
       <h1>지난호</h1>
       <ul id="backissues">
         {{ $year := ""}}
-        {{ range after 1 $issues }}
+        {{ range first 8 (after 1 $issues) }}
           
           <!-- if $year exists && .year != $year , close old year-->
           {{ if (and (gt (len $year) 0) (ne $year .year))}}
@@ -41,14 +40,15 @@
 
           <!-- if $year == "" || .year !- $year, start year ul and set $year -->
           {{ if (or (eq (len $year) 0) (ne $year .year))}}
-            <li>{{ .year }}년<ul>
+            <li><h3>{{ .year }}년</h3><ul>
             {{ $year = .year }}
           {{ end }}
 
           <!-- always create list item for the issue -->
-          <li>
-            <a href="/voiceofnm/{{ .filename }}" download>
-              {{ .firstmonth }}{{ with .lastmonth }}{{ (print " / " .) }}{{ end }} 월호
+          <li class="voiceofnm__backissues--item">
+            <a href="/voiceofnm/{{ .filename }}" download >
+              <p>{{ .issue }} 월호</p>
+              <img src='/voiceofnm/{{ replace .filename ".pdf" ".jpg" }}' />
             </a>
           </li>
 

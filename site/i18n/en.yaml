@@ -50,6 +50,8 @@
   translation: "List me as the contact"
 - id: aboutLeadership
   translation: "Church Leadership"
+- id: aboutPastor
+  translation: "Senior Pastor"
 - id: socialMenu
   translation: "Visit us on social media"
 - id: churchHistory

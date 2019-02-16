@@ -23,17 +23,21 @@
         {{ end }}
       </ul>
     </div>
-    
-    <div>
 
+
+    <div>
       <h2>{{ i18n "aboutLeadership" }}</h2>
-      
       <div class="staff">
+        <div class="pastor">
+          {{ partial "headshot" (dict "ctx" $ "id" "kim_keecheon")}}
+        </div>
+        <div class="pastor">
+          <p>{{ .Params.pastor_intro }}</p>
+        </div>
         {{ range .Params.leaders }}
         {{ partial "headshot" (dict "ctx" $ "id" .)}}
         {{ end }}
       </div>
-      
     </div>
 
   </div>

@@ -50,12 +50,14 @@
   translation: "이 글의 컨텍인포의 개인정보를 공개하시겠습니까 "
 - id: aboutLeadership
   translation: "섬기는 이들"
+- id: aboutPastor
+  translation: "담임목사 소개"
 - id: socialMenu
   translation: "교회 소셜 미디어 바로가기"
 - id: churchHistory
   translation: "교회연혁"
 - id: eventTypeAll
-  translation: "All Recent Events"
+  translation: "최근 행사"
 - id: eventTypeWorship
   translation: "예배"
 - id: eventTypeMissions
@@ -67,14 +69,14 @@
 - id: eventTypeOther
   translation: "이벤트"
 - id: eventTypeNew
-  translation: "Create a new event"
+  translation: "새 행사 공고"
 - id: noRecords
-  translation: "No records found"
+  translation: "아직 없음"
 - id: menu
-  translation: "Menu"
+  translation: "메뉴"
 - id: voiceinthewilderness
   translation: "광야의 소리"
 - id: formSuccessMsg-new_event
   translation: "Thank you. This information has been saved. If we have questions we will contact you."
 - id: formSuccessMsg-contact
-  translation: "이메일은 성공적으로 보내렸습니다. 이용해주셔서 감사합니다."
+  translation: "이메일은 성공적으로 보내졌습니다. 이용해주셔서 감사합니다."

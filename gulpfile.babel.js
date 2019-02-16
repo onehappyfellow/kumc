@@ -18,6 +18,8 @@ import imagemin from "imagemin";
 import webp from "imagemin-webp";
 
 
+const convertapi = require('convertapi')('inXz29zlHESNJpiI');
+
 const browserSync = BrowserSync.create();
 const defaultArgs = ["-d", "../dist", "-s", "site"];
 
@@ -75,24 +77,41 @@ gulp.task("svg", () => {
 });
 
 gulp.task("voiceofnm",() => {
-  const makefile = data => {
-    const { year, firstmonth } = JSON.parse(data);
-    fs.writeFile(`./site/data/voiceofnm/${year}${firstmonth}.json`, data, (err) => {
-      if (err) return console.error(err);
-    });
-  }
+  const library = [];
 
   return gulp
     .src("./site/static/voiceofnm/*.pdf")
-    // .pipe(debug({title: 'working with file:'}))
     .pipe(tap(function(file) {
-      const data = {}
-      data.filename = file.path.split('\\').pop().split('/').pop();
-      const datenums = data.filename.match(/[0-9]{4}.*[0-9]/)[0].replace("-","");
-      data.year = datenums.slice(0,4);
-      data.firstmonth = datenums.slice(4,6);
-      data.lastmonth = datenums.slice(6,8);
-      makefile(JSON.stringify(data));
+      const filename = file.path.split('\\').pop().split('/').pop();
+      const year = filename.match(/[0-9]{4}/)[0];
+      let issue = filename.slice(filename.indexOf(year) + year.length, -4).replace("-","");
+      const key = year + issue.slice(0,2);
+      // convert typical format eg: 0102 to m/m
+      if (issue.length == 4 && !isNaN(issue)) {
+        issue = parseInt(issue.slice(0,2)) + "/" + parseInt(issue.slice(2,4))
+      }
+      // remove zeros from single month issues
+      if (!isNaN(issue)) {
+        issue = parseInt(issue);
+      }
+      // add issue to object
+      library.push({key, year, issue, filename});
+      // write object back to file system
+      fs.writeFile(`./site/data/voiceofnm.json`, JSON.stringify(library), (err) => {
+        if (err) return console.error(err);
+      });
+    }))
+    .pipe(tap(function(file) {
+      const jpgPath = file.path.replace(".pdf",".jpg");
+      if (!fs.existsSync(jpgPath)) {
+        console.log(`convertapi call made for ${options.File}`);
+        convertapi
+          .convert('thumbnail', { File: file.path }, 'pdf')
+          .then(function(result) {
+            result.saveFiles('./site/static/voiceofnm');
+          })
+          .catch(err => console.error(err))
+      }
     }));
 });
 

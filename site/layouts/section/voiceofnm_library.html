@@ -1,0 +1,43 @@
+{{ define "main" }}
+  <header class="header header__voiceofnm">
+    <div class="header__voiceofnm--inner">
+      <h1><span>{{ .Params.title }}</span></h1>
+      <p><span>{{ .Params.subtitle }}</span></p>
+    </div>
+  </header>
+
+  {{ with .Params.englishonly }}
+  <div class="content">
+    <h3>{{ . }}</h3>
+  </div>
+  {{ end }}
+
+  <div class="content voiceofnm voiceofnm__library">
+
+    {{ $y := slice "2018"}}
+    {{ range $.Site.Data.voiceofnm }}
+    {{ $y = $y | append .year | uniq }}
+    {{ end }}
+    
+    <div class="voiceofnm__backissues">
+      <ul id="backissues">
+        {{ range (sort $y "value" "desc") }}
+        <li>
+          <h3>{{ . }}년</h3>
+          <ul>
+          {{ range where (sort $.Site.Data.voiceofnm "key" "asc") "year" . }}
+            <li class="voiceofnm__backissues--item">
+              <a href="/voiceofnm/{{ .filename }}" download >
+                <p>{{ .year }}년 {{ .issue }} 월호</p>
+                <img src='/voiceofnm/{{ replace .filename ".pdf" ".jpg" }}' />
+              </a>
+            </li>
+          {{ end }}
+          </ul>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+
+  </div>
+{{ end }}
