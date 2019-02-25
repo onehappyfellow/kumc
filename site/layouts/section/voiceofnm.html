@@ -47,13 +47,14 @@
           <!-- always create list item for the issue -->
           <li class="voiceofnm__backissues--item">
             <a href="/voiceofnm/{{ .filename }}" download >
-              <p>{{ .issue }} 월호</p>
+              <p>{{ .issue }}</p>
               <img src='/voiceofnm/{{ replace .filename ".pdf" ".jpg" }}' />
             </a>
           </li>
 
         {{ end }}
       </ul>
+      <h3><a href='{{ "/voiceofnm/library" | relLangURL }}'>더 보기</a></h3>
     </div>
 
     <div class="voiceofnm__signup">

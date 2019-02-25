@@ -88,11 +88,14 @@ gulp.task("voiceofnm",() => {
       const key = year + issue.slice(0,2);
       // convert typical format eg: 0102 to m/m
       if (issue.length == 4 && !isNaN(issue)) {
-        issue = parseInt(issue.slice(0,2)) + "/" + parseInt(issue.slice(2,4))
+        issue = parseInt(issue.slice(0,2)) + "/" + parseInt(issue.slice(2,4) + "월호")
       }
       // remove zeros from single month issues
-      if (!isNaN(issue)) {
-        issue = parseInt(issue);
+      else if (!isNaN(issue)) {
+        issue = parseInt(issue) + "월호";
+      }
+      else {
+        issue += "호";
       }
       // add issue to object
       library.push({key, year, issue, filename});

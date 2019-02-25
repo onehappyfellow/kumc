@@ -28,7 +28,7 @@
           {{ range where (sort $.Site.Data.voiceofnm "key" "asc") "year" . }}
             <li class="voiceofnm__backissues--item">
               <a href="/voiceofnm/{{ .filename }}" download >
-                <p>{{ .year }}년 {{ .issue }} 월호</p>
+                <p>{{ .year }}년 {{ .issue }}</p>
                 <img src='/voiceofnm/{{ replace .filename ".pdf" ".jpg" }}' />
               </a>
             </li>
