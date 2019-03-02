@@ -31,4 +31,6 @@ history:
   - {year: 2003, event: Construction of current building}
   - {year: 2004, event: Pastor Keecheon Kim called as senior pastor}
   - {year: 2009, event: Building expanded with construction of new education wing}
+
+pastor_intro: 'Martin Luther started the reformation with the cry "Sola Scriptura." His meaning was that true revival of the church could only be found in returning to the word. These days however, many churches have confused the husk for the seed. The seed is the words of scripture; the husk is theology, doctrines, creeds, testimonies. These exist to protect the seed. Our day often confuses these for the substance of faith. It is time for us to recover the essential of the word. More than anything else, the work of a pastor is to correctly teach the scriptures as they are.
 ---
