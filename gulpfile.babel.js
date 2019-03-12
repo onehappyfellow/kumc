@@ -88,7 +88,7 @@ gulp.task("voiceofnm",() => {
       const key = year + issue.slice(0,2);
       // convert typical format eg: 0102 to m/m
       if (issue.length == 4 && !isNaN(issue)) {
-        issue = parseInt(issue.slice(0,2)) + "/" + parseInt(issue.slice(2,4) + "월호")
+        issue = parseInt(issue.slice(0,2)) + "/" + parseInt(issue.slice(2,4)) + "월호";
       }
       // remove zeros from single month issues
       else if (!isNaN(issue)) {
@@ -107,7 +107,7 @@ gulp.task("voiceofnm",() => {
     .pipe(tap(function(file) {
       const jpgPath = file.path.replace(".pdf",".jpg");
       if (!fs.existsSync(jpgPath)) {
-        console.log(`convertapi call made for ${options.File}`);
+        // console.log(`convertapi call made for ${options.File}`);
         convertapi
           .convert('thumbnail', { File: file.path }, 'pdf')
           .then(function(result) {
