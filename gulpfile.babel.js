@@ -109,7 +109,7 @@ gulp.task("voiceofnm",() => {
       if (!fs.existsSync(jpgPath)) {
         // console.log(`convertapi call made for ${options.File}`);
         convertapi
-          .convert('thumbnail', { File: file.path }, 'pdf')
+          .convert('thumbnail', { File: file.path, PageRange: '1', ImageResolution: '320' }, 'pdf')
           .then(function(result) {
             result.saveFiles('./site/static/voiceofnm');
           })
