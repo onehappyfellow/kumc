@@ -6,6 +6,7 @@ PaginatePath: "p"
 disableKinds:
 - taxonomy
 - taxonomyTerm
+googleAnalytics: UA-140715412-1
 
 languages:
   en:

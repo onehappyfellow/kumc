@@ -4,8 +4,9 @@
   <body class="body language-{{ .Site.Language.Lang }}">
     {{ partial "nav" . }}
     <div class="main-block">
-      {{ block "main" . }}{{ end }} 
+      {{ block "main" . }}{{ end }}
     </div>
-    {{ partial "footer" . }} 
+    {{ partial "footer" . }}
+    {{ template "_internal/google_analytics.html" . }}
   </body>
 </html>
