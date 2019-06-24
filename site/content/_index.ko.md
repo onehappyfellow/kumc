@@ -13,7 +13,7 @@ schedule:
   items:
     - {service: "주일예배", time: "11:00 am"}
     - {service: "주일영어예배", time: "9:45 am"}
-    - {service: "수요예배", time: "7:00 pm"}
+    - {service: "수요예배", time: "7:30 pm"}
     - {service: "새벽기도회 (화 ~ 금)", time: "5:40 am"}
     - {service: "새벽기도회 (토)", time: "6:00 am"}
     - {service: "월요성경공부", time: "10:30 am"}
@@ -22,4 +22,3 @@ contact:
   phone: "연락처: [505-341-0205] (tel:+1-505-341-0205)"
   ride: "차량이용문의: 이명길 목사 [505-730-3614] (tel:1-505-730-3614)"
 ---
-

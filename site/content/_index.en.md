@@ -13,7 +13,7 @@ schedule:
   items:
     - {service: "Sunday Traditional (Korean)", time: "11:00 am"}
     - {service: "Contemporary (English)", time: "9:45 am"}
-    - {service: "Wednesday evening service", time: "7:00 pm"}
+    - {service: "Wednesday evening service", time: "7:30 pm"}
     - {service: "Morning prayer (tues - fri)", time: "5:40 am"}
     - {service: "Morning prayer (sat)", time: "6:00 am"}
     - {service: "Tuesday Bible study", time: "6:30 pm"}
@@ -22,4 +22,3 @@ contact:
   phone: "Phone: [505-341-0205] (tel:+1-505-341-0205)"
   # ride: "차량이용문의: 이명길 목사 [505-730-3614] (tel:1-505-730-3614)"
 ---
-
