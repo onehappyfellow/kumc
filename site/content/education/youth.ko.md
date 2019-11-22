@@ -4,8 +4,8 @@ weight: 2
 motto: 하나님의 사랑을 깨닫고 실천하는 그리스도인
 time: 매주일 11시
 place: 105호실
-leaders: 
-  - {title: "담당교역자", name: "이성현 목사"}
+leaders:
+  - {title: "지도", name: "구건호 형제"}
 images:
   - {url: 1544931736980.jpeg, alt: "Building friendships while on a recent outing"}
 ---

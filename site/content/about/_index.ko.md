@@ -2,7 +2,6 @@
 title: "교회소개"
 subtitle: "하나님의 은혜로 %s년 섬김의 역사"
 leaders:
-  - lee_seonghyun
   - han_michael
   - lee_kyonghwa
   - kim_joonho
@@ -19,7 +18,7 @@ leaders:
   - choi_seongwon
   - kim_ahnsook
   - kim_mikyong
-  
+
 history:
   - {year: 1982, event: 교회설립}
   - {year: 1984, event: 초대 정용치목사 부임. 예배 처소 St Stephen’s UMC .}

@@ -5,9 +5,10 @@ motto: 사랑으로 하나되자!
 time: 매주일 11시
 place: 101호실
 leaders:
-  - {title: "PreK-Kinder", name: "황경희, Torin Hovander, 김예빈"}
-  - {title: "1st-2nd", name: "정윤지"}
-  - {title: "3rd-5th", name: "Daniel Coletta"}
+  - {title: "Toddler Class", name: "이동미 집사" }
+  - {title: "PreK-Kinder", name: "황경희 집사, Jennifer Lewis"}
+  - {title: "1st-2nd", name: "정윤지 집사"}
+  - {title: "3rd-5th", name: "Daniel Coletta 집사"}
 images:
   - {url: 1544931454864.jpeg, alt: "One of the teachers explaining a Bible story"}
   - {url: 1544931604974.jpeg, alt: "Every week starts with praise and worship"}

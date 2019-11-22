@@ -5,7 +5,8 @@ motto: Love one another!
 time: Sunday 11:00am
 place: Room 101
 leaders:
-  - {title: "PreK-Kinder", name: "Kyunghee Latham, Torin Hovander, Yebin Kim"}
+  - {title: "Toddler Class", name: "Dongmi Lee" }
+  - {title: "PreK-Kinder", name: "Kyunghee Latham, Jennifer Lewis"}
   - {title: "1st-2nd", name: "Yunji Jeong"}
   - {title: "3rd-5th", name: "Daniel Coletta"}
 images:

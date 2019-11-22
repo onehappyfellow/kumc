@@ -4,8 +4,8 @@ weight: 2
 motto: Discovering and practicing God's love
 time: Sunday 11:00am
 place: Room 105
-leaders: 
-  - {title: "Youth Minister", name: "Pastor Seonghyun Lee"}
+leaders:
+  - {title: "Leader", name: "Geonho Gu"}
 images:
   - {url: 1544931736980.jpeg, alt: "Building friendships while on a recent outing"}
 ---

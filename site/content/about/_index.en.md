@@ -2,7 +2,6 @@
 title: "About our Church"
 subtitle: "By God's Grace %s years of service"
 leaders:
-  - lee_seonghyun
   - han_michael
   - lee_kyonghwa
   - kim_joonho
