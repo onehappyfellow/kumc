@@ -3,7 +3,7 @@ title: "Albuquerque Korean United Methodist Church"
 banner:
   heading: Be
   heading_span: Changed
-  subheading: 2019 Church Motto
+  subheading: 2020 Church Motto
   text: "Do not be conformed to this world, but be transformed by the renewal of your mind, that by testing you may discern what is the will of God, what is good and acceptable and perfect. (Rom 12:2)"
 blurb:
   heading: Our Church

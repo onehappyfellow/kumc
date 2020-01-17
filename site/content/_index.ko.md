@@ -3,7 +3,7 @@ title: "알버커키연합감리교회"
 banner:
   heading: 변화
   heading_span: 되자!
-  subheading: 2019 알버커키연합감리교회 표어
+  subheading: 2020 알버커키연합감리교회 표어
   text: "너희는 이 세대를 본받지 말고 오직 마음을 새롭게 함으로 변화를 받아 하나님의 선하시고 기뻐하시고 온전하신 뜻이 무엇인지 분별하도록 하라 (롬 12:2)"
 blurb:
   heading: 우리 교회
