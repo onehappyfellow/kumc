@@ -13,17 +13,17 @@
   {{ end }}
 
   <div class="content voiceofnm">
-    {{ $issues := (sort $.Site.Data.voiceofnm "key" "desc") }}
+    {{ $issues := (sort $.Site.Data.voiceofnm "sortkey" "desc") }}
     
     {{ range $issues | first 1 }}
       <div class="voiceofnm__current">
         <div class="voiceofnm__current--head">
           <h1>최근호</h1>
           <div>
-            <a class="btn btn--download" href="/voiceofnm/{{ .filename }}" download>PDF File을 다운</a>
+            <a class="btn btn--download" href="{{ .pdfUrl }}" download>PDF File을 다운</a>
           </div>
         </div>
-        <img src='/voiceofnm/{{ replace .filename ".pdf" ".jpg" }}' class="voiceofnm__current--img" />
+        <img src="{{ .imgUrl }}" class="voiceofnm__current--img" />
       </div>
     {{ end }}
 
@@ -46,9 +46,9 @@
 
           <!-- always create list item for the issue -->
           <li class="voiceofnm__backissues--item">
-            <a href="/voiceofnm/{{ .filename }}" download >
+            <a href="{{ .pdfUrl }}" download >
               <p>{{ .issue }}</p>
-              <img src='/voiceofnm/{{ replace .filename ".pdf" ".jpg" }}' />
+              <img src="{{ .imgUrl }}" />
             </a>
           </li>
 

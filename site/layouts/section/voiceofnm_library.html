@@ -25,11 +25,11 @@
         <li>
           <h3>{{ . }}년</h3>
           <ul>
-          {{ range where (sort $.Site.Data.voiceofnm "key" "asc") "year" . }}
+          {{ range where (sort $.Site.Data.voiceofnm "sortkey" "asc") "year" . }}
             <li class="voiceofnm__backissues--item">
-              <a href="/voiceofnm/{{ .filename }}" download >
+              <a href="{{ .pdfUrl }}" download >
                 <p>{{ .year }}년 {{ .issue }}</p>
-                <img src='/voiceofnm/{{ replace .filename ".pdf" ".jpg" }}' />
+                <img src="{{ .imgUrl }}" />
               </a>
             </li>
           {{ end }}
